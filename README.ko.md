@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/drvoss/harness-100-copilot/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="Apache 2.0" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="Apache 2.0" /></a>
   <a href="#"><img src="https://img.shields.io/badge/copilot--cli-ready-28a745?logo=github" alt="Copilot CLI Ready" /></a>
   <a href="#"><img src="https://img.shields.io/badge/harnesses-3%20(Phase%201%20of%20100)-orange" alt="3 Harnesses (Phase 1)" /></a>
   <a href="#"><img src="https://img.shields.io/badge/agents-15-blueviolet" alt="15 Agents" /></a>
