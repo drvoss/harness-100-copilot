@@ -135,3 +135,9 @@ npm test
 | Skill not triggering | Check that the SKILL.md `description` matches your request pattern. See [everything-copilot-cli: Skill Writing Best Practices](https://github.com/drvoss/everything-copilot-cli/blob/main/guides/) |
 | `_workspace/` conflicts | Delete `_workspace/` and start fresh |
 | Agent file not found | Verify the `.github/agents/` path matches the `agents/{file}.md` references in SKILL.md |
+
+> **Note on agent paths after installation:** The orchestrator SKILL.md task descriptions
+> reference agent files as `agents/{agent}.md` (source-tree relative paths). After installing
+> to `.github/agents/`, Copilot CLI will find these files at `.github/agents/{agent}.md`.
+> If an agent task fails with "file not found", update the path references in the SKILL.md
+> `description` strings from `agents/` to `.github/agents/`.

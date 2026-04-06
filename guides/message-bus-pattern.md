@@ -63,8 +63,8 @@ The `security-analyst` reads this and immediately investigates the flagged items
 ## Communication Flow Diagram
 
 ```
-Phase 2: Parallel Domain Reviews
-─────────────────────────────────
+Phase 2: Sequential Domain Reviews (file-bus port of original parallel step)
+─────────────────────────────────────────────────────────────────────────────
 style-inspector       → _workspace/01_style_review.md
                       → messages/style-inspector-to-review-synthesizer.md
                             └─ SENSITIVE_INFO_FOR_SECURITY
