@@ -27,7 +27,7 @@ Read from `_workspace/` before starting:
 - `00_input.md` — Deployment target, requirements
 - `01_architecture.md` — Architecture (deployment topology)
 - `_workspace/messages/architect-to-all.md` — DEPLOYMENT_TARGET
-- `_workspace/messages/qa-engineer-to-devops.md` — TEST_COMMANDS for CI pipeline
+- `_workspace/messages/qa-engineer-to-devops.md` — TEST_COMMANDS for CI pipeline *(read only during final review, Step 4.2; this file does not exist during Step 3.3 deployment setup)*
 
 ## Output Contract
 Write to `_workspace/` and project:
@@ -61,23 +61,6 @@ Output format for `06_review_report.md`:
 [Anything not completed in this session]
 ```
 
-## Message Protocol (File-Based)
-When work is complete, write completion summary to:
-`_workspace/messages/devops-engineer-to-all.md`
-
-Format:
-```
-STATUS: COMPLETE
-DEPLOYMENT_GUIDE: _workspace/05_deploy_guide.md
-REVIEW_REPORT: _workspace/06_review_report.md
-MUST_FIX_ADDRESSED: [list of QA MUST_FIX items resolved]
-DEPLOY_COMMANDS:
-  build: docker build -t app .
-  run: docker-compose up -d
-  ci: see .github/workflows/deploy.yml
-ENV_SETUP: see .env.example for required variables
-```
-
 ## Quality Gates
 Before marking output complete:
 - [ ] Dockerfile created and tested locally
@@ -86,4 +69,3 @@ Before marking output complete:
 - [ ] .env.example created with all required variables
 - [ ] Review report written
 - [ ] All `_workspace/` artifacts present
-- [ ] Message written to `_workspace/messages/devops-engineer-to-all.md`

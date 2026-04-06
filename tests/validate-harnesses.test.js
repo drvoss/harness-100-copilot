@@ -121,8 +121,8 @@ describe('Harness Structure Validation', () => {
         agentFiles.forEach(agentFile => {
           const content = readFile(path.join(agentsDir, agentFile))
           if (!content) return
-          // Terminal agents (synthesizer, pipeline-reviewer) do not send outgoing messages
-          if (agentFile.includes('synthesizer') || agentFile === 'pipeline-reviewer.md') return
+          // Terminal agents (synthesizer, pipeline-reviewer, devops-engineer) do not send outgoing messages
+          if (agentFile.includes('synthesizer') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md') return
           expect(content).toMatch(/##\s+Message Protocol/i)
         })
       })
@@ -135,7 +135,7 @@ describe('Harness Structure Validation', () => {
         agentFiles.forEach(agentFile => {
           const content = readFile(path.join(agentsDir, agentFile))
           if (!content) return
-          if (agentFile.includes('synthesizer')) return // terminal agent
+          if (agentFile.includes('synthesizer') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md') return // terminal agents
           expect(content).toMatch(/_workspace\/messages\//i)
         })
       })

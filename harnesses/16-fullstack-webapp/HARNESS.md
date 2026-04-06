@@ -29,15 +29,15 @@ Trigger the `fullstack-webapp` skill or make a natural language request:
 
 ## Workspace Artifacts
 
-All artifacts are saved in `_workspace/` in your project:
-- `00_input.md` — Organized requirements
-- `01_architecture.md` — Architecture design document
-- `02_api_spec.md` — API specification
-- `03_db_schema.md` — Database schema
-- `04_test_plan.md` — Test plan
-- `05_deploy_guide.md` — Deployment guide
-- `06_review_report.md` — Review report
-- `src/` — Source code (frontend + backend), written to the project root (not inside `_workspace/`)
+Workspace documents are saved in `_workspace/`; source code is written to the project root:
+- `_workspace/00_input.md` — Organized requirements
+- `_workspace/01_architecture.md` — Architecture design document
+- `_workspace/02_api_spec.md` — API specification
+- `_workspace/03_db_schema.md` — Database schema
+- `_workspace/04_test_plan.md` — Test plan
+- `_workspace/05_deploy_guide.md` — Deployment guide
+- `_workspace/06_review_report.md` — Review report
+- `src/` — Source code (frontend + backend), at project root
 
 ## Installation
 

@@ -27,7 +27,7 @@
 
 **harness-100-copilot** is a port of [revfactory/harness-100](https://github.com/revfactory/harness-100) for **GitHub Copilot CLI**.
 
-The original harness-100 provides 100 production-grade multi-agent team harnesses for Claude Code, where agents communicate via `SendMessage`. This project adapts every harness to work with Copilot CLI's file-based message bus pattern, achieving **~96% functional parity**.
+The original harness-100 provides 100 production-grade multi-agent team harnesses for Claude Code, where agents communicate via `SendMessage`. This project adapts the available Phase 1 harnesses (3 of 100 planned) to work with Copilot CLI's file-based message bus pattern, achieving **~96% functional parity**.
 
 > **What's a harness?** A pre-assembled team of 4-7 specialist agents that collaborate through a structured pipeline to complete complex tasks — like building a full-stack web app, reviewing a PR, or setting up a CI/CD pipeline.
 

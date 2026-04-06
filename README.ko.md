@@ -10,6 +10,14 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/drvoss/harness-100-copilot/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="Apache 2.0" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/copilot--cli-ready-28a745?logo=github" alt="Copilot CLI Ready" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/harnesses-3%20(Phase%201%20of%20100)-orange" alt="3 Harnesses (Phase 1)" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/agents-15-blueviolet" alt="15 Agents" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/parity-~96%25-green" alt="~96% parity" /></a>
+</p>
+
+<p align="center">
   <a href="README.md">🇺🇸 English</a>
 </p>
 
@@ -19,7 +27,7 @@
 
 **harness-100-copilot**은 [revfactory/harness-100](https://github.com/revfactory/harness-100)을 **GitHub Copilot CLI**용으로 포팅한 프로젝트입니다.
 
-원본 harness-100은 Claude Code의 `SendMessage`를 이용해 에이전트들이 실시간으로 소통하는 구조입니다. 이 프로젝트는 모든 하네스를 Copilot CLI의 **파일 기반 메시지 버스** 패턴으로 변환하여 **~96% 기능 동등성**을 달성합니다.
+원본 harness-100은 Claude Code의 `SendMessage`를 이용해 에이전트들이 실시간으로 소통하는 구조입니다. 이 프로젝트는 현재 Phase 1에서 3개 하네스를 Copilot CLI의 **파일 기반 메시지 버스** 패턴으로 변환했으며, 100개 전체 포팅을 목표로 합니다 (**~96% 기능 동등성**).
 
 > **하네스란?** 복잡한 작업(전체 풀스택 앱 개발, PR 리뷰, CI/CD 파이프라인 구축 등)을 완수하기 위해 구조화된 파이프라인으로 협업하는 4~7명의 전문가 에이전트 팀입니다.
 

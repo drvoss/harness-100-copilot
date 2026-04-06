@@ -32,7 +32,7 @@ Trigger the `cicd-pipeline` skill or make a natural language request:
 All artifacts are saved in `_workspace/` in your project:
 - `00_input.md` — Organized pipeline requirements
 - `01_pipeline_design.md` — Pipeline design document
-- `02_pipeline_config/` — Pipeline configuration files (YAML)
+- `02_pipeline_config/` — Pipeline configuration files (YAML + Markdown)
 - `03_monitoring.md` — Monitoring design document
 - `04_security_scan.md` — Security scan configuration and report
 - `05_review_report.md` — Pipeline review report
