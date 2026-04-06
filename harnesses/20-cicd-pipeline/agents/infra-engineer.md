@@ -25,7 +25,7 @@ metadata:
 ## Input Contract
 Read from `_workspace/` before starting:
 - `00_input.md` — Requirements
-- `01_pipeline_design.md` — Pipeline design to infrastructure against
+- `01_pipeline_design.md` — Pipeline design to configure infrastructure for
 - `_workspace/messages/pipeline-designer-to-pipeline-reviewer.md` — INFRA_REQUIREMENTS section
 
 ## Output Contract

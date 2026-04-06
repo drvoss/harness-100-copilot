@@ -3,7 +3,7 @@ name: review-synthesizer
 description: "Use when synthesizing multi-domain code review findings into a final prioritized report. Reads outputs from style-inspector, security-analyst, performance-analyst, and architecture-reviewer. Part of the code-reviewer harness."
 metadata:
   harness: code-reviewer
-  role: orchestrator
+  role: synthesizer
 ---
 
 # Review Synthesizer — Final Report Specialist

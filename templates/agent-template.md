@@ -3,7 +3,7 @@ name: {agent-name}
 description: "Use when [specific trigger scenario] — [what the agent does]. Part of the {harness-name} harness."
 metadata:
   harness: {harness-name}
-  role: specialist | orchestrator | qa
+  role: specialist | orchestrator | synthesizer | qa
 ---
 
 # {Agent Name} — {One-Line Role}

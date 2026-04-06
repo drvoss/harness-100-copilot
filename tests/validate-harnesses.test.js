@@ -121,8 +121,8 @@ describe('Harness Structure Validation', () => {
         agentFiles.forEach(agentFile => {
           const content = readFile(path.join(agentsDir, agentFile))
           if (!content) return
-          // Synthesizer/reviewer is the terminal agent — may not have outgoing message protocol
-          if (agentFile.includes('synthesizer') || agentFile.includes('reviewer')) return
+          // Terminal agents (synthesizer, pipeline-reviewer) do not send outgoing messages
+          if (agentFile.includes('synthesizer') || agentFile === 'pipeline-reviewer.md') return
           expect(content).toMatch(/##\s+Message Protocol/i)
         })
       })

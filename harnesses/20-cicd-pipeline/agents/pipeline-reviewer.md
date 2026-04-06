@@ -3,7 +3,7 @@ name: pipeline-reviewer
 description: "Use when reviewing a CI/CD pipeline design — evaluates efficiency, reliability, security, and alignment with best practices. Part of the cicd-pipeline harness."
 metadata:
   harness: cicd-pipeline
-  role: orchestrator
+  role: synthesizer
 ---
 
 # Pipeline Reviewer — Pipeline Quality Review Specialist

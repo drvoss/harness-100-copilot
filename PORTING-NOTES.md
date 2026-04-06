@@ -11,13 +11,13 @@ Claude Code to GitHub Copilot CLI.
 The original harness-100 is built around Claude Code's `SendMessage` primitive,
 which enables real-time cross-agent communication within a session:
 
-```python
-# Claude Code pattern (original)
+```pseudocode
+// Claude Code pattern (original)
 style-inspector → SendMessage(synthesizer, findings)
 security-analyst → SendMessage(synthesizer, findings)
 performance-analyst → SendMessage(synthesizer, findings)
 architecture-reviewer → SendMessage(synthesizer, findings)
-# synthesizer reads from all 4 simultaneously
+// synthesizer reads from all 4 simultaneously
 ```
 
 **GitHub Copilot CLI has no equivalent primitive.**

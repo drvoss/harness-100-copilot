@@ -37,7 +37,7 @@ All artifacts are saved in `_workspace/` in your project:
 - `04_test_plan.md` — Test plan
 - `05_deploy_guide.md` — Deployment guide
 - `06_review_report.md` — Review report
-- `src/` — Source code (frontend + backend)
+- `src/` — Source code (frontend + backend), written to the project root (not inside `_workspace/`)
 
 ## Installation
 
