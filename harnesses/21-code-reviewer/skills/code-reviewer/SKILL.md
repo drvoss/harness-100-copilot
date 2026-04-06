@@ -37,7 +37,7 @@ task(agent_type="general-purpose",
      description="Read the user's code review request. Create _workspace/ and _workspace/messages/ directories. Extract: target code/PR, language/framework, review scope, context. Write organized input to _workspace/00_input.md with sections: TARGET_CODE, LANGUAGE, SCOPE, CONTEXT, STYLE_GUIDE.")
 ```
 
-## Phase 2: Parallel Domain Reviews
+## Phase 2: Sequential Domain Reviews (file-bus port of original parallel step)
 
 Run all 4 in sequence (each reads from `_workspace/00_input.md`):
 

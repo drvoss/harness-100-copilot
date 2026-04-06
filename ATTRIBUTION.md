@@ -19,7 +19,7 @@ licensed under Apache License 2.0.
 | `harnesses/16-fullstack-webapp/` | `en/16-fullstack-webapp/.claude/` | SendMessage → file bus |
 | `harnesses/20-cicd-pipeline/` | `en/20-cicd-pipeline/.claude/` | SendMessage → file bus |
 | `harnesses/21-code-reviewer/` | `en/21-code-reviewer/.claude/` | SendMessage → file bus |
-| Agent definitions (`*.md`) | `.claude/agents/*.md` | Added Input/Output/Message Protocol sections |
+| Agent definitions (`*.md`) | `.claude/agents/*.md` | Added Input/Output sections and Message Protocol sections for handoff-producing agents |
 | Orchestrator skills (`SKILL.md`) | `.claude/skills/*/skill.md` | Replaced SendMessage with task() + file bus |
 
 ## Key Adaptation: SendMessage → File-Based Message Bus
@@ -30,7 +30,7 @@ primitive.
 
 **Replacement strategy:**
 1. Each agent writes output to `_workspace/{nn}_{name}.md` (same as original)
-2. Each agent also writes a structured summary to `_workspace/messages/{from}-to-{to}.md`
+2. Each handoff-producing agent also writes a structured summary to `_workspace/messages/{from}-to-{to}.md`
 3. The next agent reads the relevant message files before starting
 4. The orchestrator sequences execution to respect dependencies
 

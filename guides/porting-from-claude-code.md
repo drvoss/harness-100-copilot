@@ -42,8 +42,8 @@ For each `SendMessage(target, content)` in the original, create:
 **Example mapping:**
 
 Original:
-```python
-# style-inspector completes → calls:
+```pseudocode
+// style-inspector completes → calls:
 SendMessage(synthesizer, {
   "findings": [...],
   "sensitive_items": [...],
@@ -79,14 +79,14 @@ name: {agent-name}
 description: "Use when [trigger] — [what it does]. Part of the {harness-name} harness."
 metadata:
   harness: {harness-name}
-  role: specialist | orchestrator | qa
+  role: specialist | orchestrator | synthesizer | qa
 ---
 ```
 
 Then adapt the original content, adding:
 - **Input Contract** section (what to read from `_workspace/`)
 - **Output Contract** section (what to write to `_workspace/`)
-- **Message Protocol** section (what to write to `_workspace/messages/`)
+- **Message Protocol** section (for handoff-producing agents — write to `_workspace/messages/`)
 - **Quality Gates** checklist (self-validation before completion)
 
 Keep unchanged:
@@ -107,8 +107,8 @@ For `.claude/skills/{name}/skill.md`, create `skills/{name}/SKILL.md` with:
 ### SendMessage → task() Conversion
 
 **Original (parallel):**
-```python
-# Tasks 1a-1d run in parallel
+```pseudocode
+// Tasks 1a-1d run in parallel
 Task(style-inspector, ...)
 Task(security-analyst, ...)
 Task(performance-analyst, ...)
@@ -169,7 +169,7 @@ Create `HARNESS.md` from the `CLAUDE.md` template:
 [cp command]
 
 ## Attribution
-Adapted from [revfactory/harness-100](...) under Apache 2.0 License.
+Adapted from [revfactory/harness-100](https://github.com/revfactory/harness-100) under Apache 2.0 License.
 Key adaptation: SendMessage peer communication replaced with file-based message bus.
 ```
 
@@ -206,7 +206,7 @@ The test suite checks:
 
 ## Common Mistakes
 
-1. **Forgetting the message protocol** — Agents that don't write message files break the chain
+1. **Forgetting required message protocols** — Handoff-producing agents that don't write message files break the chain (terminal/synthesizer agents are exempt)
 2. **Too much in one task description** — Keep each `task()` call focused on one agent
 3. **Not reading prerequisite messages** — Agent B must explicitly read Agent A's message
 4. **Passive skill description** — Will never trigger; always use trigger-first pattern

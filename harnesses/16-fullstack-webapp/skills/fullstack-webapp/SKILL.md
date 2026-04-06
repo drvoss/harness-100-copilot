@@ -45,7 +45,7 @@ task(agent_type="general-purpose",
      description="You are the architect agent. Read agents/architect.md for your full instructions. Read _workspace/00_input.md. Design the system architecture: component diagram, technology stack selection, database schema, and API specification. Write to _workspace/01_architecture.md, _workspace/02_api_spec.md, _workspace/03_db_schema.md. Write handoff message to _workspace/messages/architect-to-all.md.")
 ```
 
-## Phase 3: Parallel Development (after architecture)
+## Phase 3: Sequential Development (file-bus port of original parallel step)
 
 ### Step 3.1 — Frontend Developer
 ```

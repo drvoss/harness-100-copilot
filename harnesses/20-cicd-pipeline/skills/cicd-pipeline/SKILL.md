@@ -45,7 +45,7 @@ task(agent_type="general-purpose",
      description="You are the pipeline-designer agent. Read agents/pipeline-designer.md for your full instructions. Read _workspace/00_input.md. Design the complete CI/CD pipeline: stages, triggers, branch strategy, parallelization, and caching. Write pipeline design to _workspace/01_pipeline_design.md and YAML configurations to _workspace/02_pipeline_config/. Write message to _workspace/messages/pipeline-designer-to-pipeline-reviewer.md.")
 ```
 
-## Phase 3: Parallel Specialist Work
+## Phase 3: Sequential Specialist Work (file-bus port of original parallel step)
 
 ### Step 3.1 — Infrastructure Engineer
 ```
