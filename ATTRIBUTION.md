@@ -17,8 +17,20 @@ licensed under Apache License 2.0.
 | This Project | Source | Key Changes |
 |-------------|--------|-------------|
 | `harnesses/16-fullstack-webapp/` | `en/16-fullstack-webapp/.claude/` | SendMessage → file bus |
+| `harnesses/17-mobile-app-builder/` | `en/17-mobile-app-builder/.claude/` | SendMessage → file bus |
+| `harnesses/18-api-designer/` | `en/18-api-designer/.claude/` | SendMessage → file bus |
+| `harnesses/19-database-architect/` | `en/19-database-architect/.claude/` | SendMessage → file bus |
 | `harnesses/20-cicd-pipeline/` | `en/20-cicd-pipeline/.claude/` | SendMessage → file bus |
 | `harnesses/21-code-reviewer/` | `en/21-code-reviewer/.claude/` | SendMessage → file bus |
+| `harnesses/22-legacy-modernizer/` | `en/22-legacy-modernizer/.claude/` | SendMessage → file bus |
+| `harnesses/23-microservice-designer/` | `en/23-microservice-designer/.claude/` | SendMessage → file bus |
+| `harnesses/24-test-automation/` | `en/24-test-automation/.claude/` | SendMessage → file bus |
+| `harnesses/25-incident-postmortem/` | `en/25-incident-postmortem/.claude/` | SendMessage → file bus |
+| `harnesses/26-infra-as-code/` | `en/26-infra-as-code/.claude/` | SendMessage → file bus |
+| `harnesses/27-data-pipeline/` | `en/27-data-pipeline/.claude/` | SendMessage → file bus |
+| `harnesses/28-security-audit/` | `en/28-security-audit/.claude/` | SendMessage → file bus |
+| `harnesses/29-performance-optimizer/` | `en/29-performance-optimizer/.claude/` | SendMessage → file bus |
+| `harnesses/30-open-source-launcher/` | `en/30-open-source-launcher/.claude/` | SendMessage → file bus |
 | Agent definitions (`*.md`) | `.claude/agents/*.md` | Added Input/Output sections and Message Protocol sections for handoff-producing agents |
 | Orchestrator skills (`SKILL.md`) | `.claude/skills/*/skill.md` | Replaced SendMessage with task() + file bus |
 

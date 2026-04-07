@@ -7,6 +7,8 @@ on:
       - 'templates/**'
       - 'tests/**'
       - 'scripts/**'
+      - 'lib/**'
+      - 'bin/**'
   pull_request:
     paths:
       - 'harnesses/**'
@@ -41,6 +43,10 @@ jobs:
           echo "Total harnesses: $count"
           echo "harness_count=$count" >> "$GITHUB_ENV"
 
-      - name: Update README badge (main branch only)
+      - name: Update README badge (master branch only)
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: node scripts/update-stats.js
+        run: |
+          node scripts/update-stats.js
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || (git add README.md && git commit -m "chore: update harness/agent count badges [skip ci]" && git push)
