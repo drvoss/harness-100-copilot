@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: "Use when you need thorough code review of a PR or file set — dispatches style-inspector, security-analyst, performance-analyst, and architecture-reviewer in sequence, then synthesizes findings into a prioritized action report. Covers correctness, security vulnerabilities, performance bottlenecks, and architecture alignment. Does NOT cover runtime testing, deployment validation, or auto-merging PRs."
+description: "Use when you need thorough code review of a PR or file set — dispatches style-inspector, security-analyst, performance-analyst, and architecture-reviewer in sequence, then synthesizes findings into a prioritized action report. Covers correctness, security vulnerabilities, performance bottlenecks, and architecture alignment. Does NOT cover runtime testing, deployment validation, or auto-merging PRs. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 21-code-reviewer

@@ -1,6 +1,6 @@
 ---
 name: oss-checklist
-description: "Use when validating an open source project launch readiness or verifying license compatibility — provides a comprehensive OSS launch checklist, license compatibility matrix, and community health file inventory. Extends the open-source-launcher harness and can be used standalone."
+description: "Use when validating an open source project launch readiness or verifying license compatibility — provides a comprehensive OSS launch checklist, license compatibility matrix, and community health file inventory. Extends the open-source-launcher harness and can be used standalone. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 30-open-source-launcher

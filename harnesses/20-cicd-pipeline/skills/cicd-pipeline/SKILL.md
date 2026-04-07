@@ -1,6 +1,6 @@
 ---
 name: cicd-pipeline
-description: "Use when designing, building, or optimizing a CI/CD pipeline — assembles a team of pipeline-designer, infra-engineer, monitoring-specialist, and security-scanner to deliver a complete pipeline design with YAML configs, monitoring setup, and security gates. Covers GitHub Actions, GitLab CI, Jenkins, CircleCI, and Azure DevOps. Does NOT cover Kubernetes operators, service meshes, or production infrastructure provisioning beyond pipeline scope."
+description: "Use when designing, building, or optimizing a CI/CD pipeline — assembles a team of pipeline-designer, infra-engineer, monitoring-specialist, and security-scanner to deliver a complete pipeline design with YAML configs, monitoring setup, and security gates. Covers GitHub Actions, GitLab CI, Jenkins, CircleCI, and Azure DevOps. Does NOT cover Kubernetes operators, service meshes, or production infrastructure provisioning beyond pipeline scope. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 20-cicd-pipeline

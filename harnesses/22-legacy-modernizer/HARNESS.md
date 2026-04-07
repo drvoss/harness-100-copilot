@@ -19,6 +19,32 @@ harnesses/22-legacy-modernizer/
     └── technical-debt-assessment/SKILL.md       Tech debt quantification, SQALE model
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| code-archaeologist | Analyzes legacy code: patterns, dependencies, tech debt hotspots | `01_legacy_analysis.md` |
+| risk-assessor | Migration risk matrix: breaking changes, business continuity | `02_risk_assessment.md` |
+| modernization-planner | Modernization roadmap: phases, technology selection | `03_modernization_plan.md` |
+| refactor-specialist | Incremental refactoring: before/after examples, pattern catalog | `04_refactoring_guide.md` |
+| migration-reviewer | Final review: completeness checklist, go/no-go decision | `05_migration_review.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/22-legacy-modernizer/agents/ .github/agents/
+cp -r harnesses/22-legacy-modernizer/skills/ .github/skills/
+```
+Then ask Copilot: `Help me modernize this legacy Java monolith`
+
+### Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full modernization roadmap | Full Pipeline (all 5) | all |
+| Risk assessment only | Reduced (2 agents) | code-archaeologist → risk-assessor |
+| Quick refactoring tips | Single | refactor-specialist only |
+
 ## Usage
 
 Trigger the `legacy-modernizer` skill or make a natural language request:

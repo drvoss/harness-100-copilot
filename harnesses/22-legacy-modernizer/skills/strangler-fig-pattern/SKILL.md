@@ -1,6 +1,6 @@
 ---
 name: strangler-fig-pattern
-description: "Use when implementing the Strangler Fig migration pattern — provides a step-by-step guide for facade installation, anti-corruption layer design, incremental traffic migration, and legacy retirement. Supporting skill for the legacy-modernizer harness."
+description: "Use when implementing the Strangler Fig migration pattern — provides a step-by-step guide for facade installation, anti-corruption layer design, incremental traffic migration, and legacy retirement. Supporting skill for the legacy-modernizer harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting-skill
   harness: 22-legacy-modernizer

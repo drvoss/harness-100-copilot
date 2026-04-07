@@ -1,6 +1,6 @@
 ---
 name: service-mesh-patterns
-description: "Use when configuring service mesh infrastructure for microservices — provides Istio/Linkerd pattern guidance, traffic management VirtualService/DestinationRule templates, mTLS configuration, and observability setup. Does NOT cover application-level API design or database configuration."
+description: "Use when configuring service mesh infrastructure for microservices — provides Istio/Linkerd pattern guidance, traffic management VirtualService/DestinationRule templates, mTLS configuration, and observability setup. Does NOT cover application-level API design or database configuration. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting-skill
   harness: 23-microservice-designer

@@ -1,6 +1,6 @@
 ---
 name: openapi-spec
-description: "Use when generating, validating, or extending an OpenAPI 3.0 specification — provides common schema patterns, reusable component templates, and best-practice structures for paths, securitySchemes, responses, and parameters. Supporting skill for the api-designer harness."
+description: "Use when generating, validating, or extending an OpenAPI 3.0 specification — provides common schema patterns, reusable component templates, and best-practice structures for paths, securitySchemes, responses, and parameters. Supporting skill for the api-designer harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting-skill
   harness: 18-api-designer

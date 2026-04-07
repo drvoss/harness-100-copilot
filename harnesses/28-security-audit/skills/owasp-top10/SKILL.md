@@ -1,6 +1,6 @@
 ---
 name: owasp-top10
-description: "Use when you need OWASP Top 10 2021 reference data — provides detailed descriptions, code examples, and mitigations for all 10 categories (A01–A10). Supporting skill for the security-audit harness."
+description: "Use when you need OWASP Top 10 2021 reference data — provides detailed descriptions, code examples, and mitigations for all 10 categories (A01–A10). Supporting skill for the security-audit harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 28-security-audit

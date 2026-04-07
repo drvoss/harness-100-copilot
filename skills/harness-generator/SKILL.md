@@ -41,7 +41,7 @@ task(agent_type="general-purpose",
 3. What is the natural information flow between roles? Draw an ASCII DAG.
 4. Which of the 6 patterns best fits the workflow:
    Pipeline | Fan-out/Fan-in | Expert Pool | Producer-Reviewer | Supervisor | Hierarchical
-   Read harnesses/skills/harness-generator/references/agent-design-patterns.md for definitions.
+   Read skills/harness-generator/references/agent-design-patterns.md for definitions.
 5. What domain knowledge frameworks are relevant? (e.g. OWASP, DORA, SOLID, TOGAF)
 6. What are 3 concrete trigger phrases a user would say?
 

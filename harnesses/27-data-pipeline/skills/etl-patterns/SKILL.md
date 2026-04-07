@@ -1,6 +1,6 @@
 ---
 name: etl-patterns
-description: "Use when implementing data transformation pipelines — provides ELT vs ETL decision framework, dbt project structure best practices, Spark optimization patterns, and incremental processing strategies."
+description: "Use when implementing data transformation pipelines — provides ELT vs ETL decision framework, dbt project structure best practices, Spark optimization patterns, and incremental processing strategies. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 27-data-pipeline

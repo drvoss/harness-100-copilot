@@ -20,6 +20,14 @@ const TRIGGER_FIRST_PATTERNS = [
   /^deploy when/i,
 ]
 
+const FOLLOWUP_PATTERNS = [
+  /re-run/i,
+  /update/i,
+  /revise/i,
+  /supplement/i,
+  /also triggers on/i,
+]
+
 function findSkillFiles(dir) {
   const results = []
   if (!fs.existsSync(dir)) return results
@@ -63,6 +71,9 @@ searchDirs.forEach(dir => {
         console.error(`❌  ${relPath}`)
         console.error(`    description: "${desc.substring(0, 80)}..."`)
         errors++
+      } else if (!FOLLOWUP_PATTERNS.some(p => p.test(desc))) {
+        console.error(`❌  ${relPath} — missing follow-up keyword (re-run/update/revise/supplement)`)
+        errors++
       }
       return
     }
@@ -73,14 +84,17 @@ searchDirs.forEach(dir => {
       console.error(`❌  ${relPath}`)
       console.error(`    description: "${desc.substring(0, 80)}..."`)
       errors++
+    } else if (!FOLLOWUP_PATTERNS.some(p => p.test(desc))) {
+      console.error(`❌  ${relPath} — missing follow-up keyword (re-run/update/revise/supplement)`)
+      errors++
     }
   })
 })
 
 console.log(`\nChecked ${checked} SKILL.md file(s)`)
 if (errors > 0) {
-  console.error(`Found ${errors} description(s) not following trigger-first pattern`)
+  console.error(`Found ${errors} description(s) not following trigger-first or follow-up keyword rules`)
   process.exit(1)
-} else {
-  console.log('✅  All descriptions follow trigger-first pattern')
+}else {
+  console.log('✅  All descriptions follow trigger-first and follow-up keyword rules')
 }

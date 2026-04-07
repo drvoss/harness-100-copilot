@@ -24,11 +24,11 @@ jobs:
       - name: Validate changed harnesses
         run: |
           changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
-          if echo "$changed" | grep -q "^harnesses/"; then
-            echo "Harness files changed — running validation"
+          if echo "$changed" | grep -qE "^(harnesses|lib|bin|scripts)/"; then
+            echo "Harness or tooling files changed — running full validation"
             npm test
           else
-            echo "No harness files changed — skipping harness validation"
+            echo "No harness or tooling files changed — skipping validation"
           fi
 
       - name: Check Attribution in new HARNESS.md files

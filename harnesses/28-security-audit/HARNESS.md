@@ -19,6 +19,33 @@ harnesses/28-security-audit/
     └── vulnerability-triage/SKILL.md  Supporting — CVSS scoring guide, severity classification
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| threat-modeler | Threat modeling: STRIDE, attack surface, trust boundaries | `01_threat_model.md` |
+| code-security-analyst | SAST: injection, auth, crypto, OWASP Top 10, CWE | `02_code_security.md` |
+| dependency-auditor | SCA: CVEs, license risks, supply chain threats | `03_dependency_audit.md` |
+| config-reviewer | Config: secrets, TLS, IAM, Docker/K8s security | `04_config_review.md` |
+| security-reporter | Synthesis: CVSS scoring, remediation priority, executive summary | `05_security_report.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/28-security-audit/agents/ .github/agents/
+cp -r harnesses/28-security-audit/skills/ .github/skills/
+```
+Then ask Copilot: `Security audit this codebase`
+
+### Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full security audit | Full Pipeline (all 5) | all |
+| Code-only review | Reduced (2 agents) | threat-modeler → code-security-analyst |
+| Dependency check only | Single | dependency-auditor only |
+| Config review only | Single | config-reviewer only |
+
 ## Usage
 
 Trigger the `security-audit` skill or make a natural language request:

@@ -1,6 +1,6 @@
 ---
 name: schema-design-patterns
-description: "Use when you need reference material on database normalization forms, common relational patterns (junction tables, audit columns, soft delete, hierarchies), or data type selection guidance. Supports the schema-designer agent in the database-architect harness."
+description: "Use when you need reference material on database normalization forms, common relational patterns (junction tables, audit columns, soft delete, hierarchies), or data type selection guidance. Supports the schema-designer agent in the database-architect harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting
   harness: 19-database-architect

@@ -1,6 +1,6 @@
 ---
 name: technical-debt-assessment
-description: "Use when quantifying technical debt in a legacy codebase — applies the SQALE model to measure debt principal, interest, and payoff priority. Supporting skill for the legacy-modernizer harness."
+description: "Use when quantifying technical debt in a legacy codebase — applies the SQALE model to measure debt principal, interest, and payoff priority. Supporting skill for the legacy-modernizer harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting-skill
   harness: 22-legacy-modernizer

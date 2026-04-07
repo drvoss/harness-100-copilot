@@ -1,6 +1,6 @@
 ---
 name: core-web-vitals
-description: "Use when measuring or optimizing Core Web Vitals -- provides LCP/FID/CLS/INP targets, measurement tool configurations, and optimization techniques for each vital metric."
+description: "Use when measuring or optimizing Core Web Vitals -- provides LCP/FID/CLS/INP targets, measurement tool configurations, and optimization techniques for each vital metric. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 29-performance-optimizer

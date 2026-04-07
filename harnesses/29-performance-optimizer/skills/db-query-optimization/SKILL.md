@@ -1,6 +1,6 @@
 ---
 name: db-query-optimization
-description: "Use when optimizing database query performance -- provides EXPLAIN plan interpretation patterns, index tuning strategies, N+1 query detection and fixes, and query rewrite patterns for PostgreSQL, MySQL, and common ORMs."
+description: "Use when optimizing database query performance -- provides EXPLAIN plan interpretation patterns, index tuning strategies, N+1 query detection and fixes, and query rewrite patterns for PostgreSQL, MySQL, and common ORMs. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 29-performance-optimizer

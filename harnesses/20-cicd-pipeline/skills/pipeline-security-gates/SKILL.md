@@ -1,6 +1,6 @@
 ---
 name: pipeline-security-gates
-description: "Use when configuring security gates in a CI/CD pipeline — provides tool selection guides, threshold configuration, SAST/SCA/secret detection placement, and fail-fast strategies. Extends the security-scanner agent."
+description: "Use when configuring security gates in a CI/CD pipeline — provides tool selection guides, threshold configuration, SAST/SCA/secret detection placement, and fail-fast strategies. Extends the security-scanner agent. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 20-cicd-pipeline

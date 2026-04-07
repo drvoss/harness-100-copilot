@@ -1,6 +1,6 @@
 ---
 name: terraform-patterns
-description: "Use when working with Terraform infrastructure code — provides module structure patterns, remote state configuration, workspace-per-environment guidance, and security scanning templates for checkov/tfsec."
+description: "Use when working with Terraform infrastructure code — provides module structure patterns, remote state configuration, workspace-per-environment guidance, and security scanning templates for checkov/tfsec. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 26-infra-as-code

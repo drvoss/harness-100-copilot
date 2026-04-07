@@ -1,6 +1,6 @@
 ---
 name: db-performance-checklist
-description: "Use when analyzing database query performance, selecting index types, or interpreting EXPLAIN ANALYZE output — provides a structured checklist for index selection, query optimization, and execution plan reading. Supports the query-optimizer agent in the database-architect harness."
+description: "Use when analyzing database query performance, selecting index types, or interpreting EXPLAIN ANALYZE output — provides a structured checklist for index selection, query optimization, and execution plan reading. Supports the query-optimizer agent in the database-architect harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting
   harness: 19-database-architect

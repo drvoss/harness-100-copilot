@@ -9,10 +9,9 @@
   "scripts": {
     "test": "jest --testPathPattern=tests/",
     "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _workspace",
-    "validate": "npm test && npm run check-descriptions",
+    "validate": "npm test && npm run check-descriptions && npm run lint:md",
     "stats": "node scripts/update-stats.js",
-    "check-descriptions": "node scripts/check-descriptions.js",
-    "harness-detect": "node bin/harness-detect.mjs"
+    "check-descriptions": "node scripts/check-descriptions.js"
   },
   "repository": {
     "type": "git",

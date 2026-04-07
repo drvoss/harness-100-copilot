@@ -1,6 +1,6 @@
 ---
 name: test-coverage-strategy
-description: "Use when you need to define or improve test coverage metrics, set mutation testing targets, or analyze coverage reports — provides coverage threshold recommendations, mutation testing setup, and gap analysis patterns."
+description: "Use when you need to define or improve test coverage metrics, set mutation testing targets, or analyze coverage reports — provides coverage threshold recommendations, mutation testing setup, and gap analysis patterns. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 24-test-automation

@@ -1,6 +1,6 @@
 ---
 name: fullstack-webapp
-description: "Use when building a full-stack web application from scratch or adding major features — assembles architect, frontend-dev, backend-dev, qa-engineer, and devops-engineer to deliver complete code, tests, and deployment setup. Covers React/Next.js + Node.js/Python backends, PostgreSQL/MongoDB databases, and Vercel/AWS/Railway deployment. Does NOT cover mobile apps (React Native/Flutter), desktop apps, game development, or ML/AI model training."
+description: "Use when building a full-stack web application from scratch or adding major features — assembles architect, frontend-dev, backend-dev, qa-engineer, and devops-engineer to deliver complete code, tests, and deployment setup. Covers React/Next.js + Node.js/Python backends, PostgreSQL/MongoDB databases, and Vercel/AWS/Railway deployment. Does NOT cover mobile apps (React Native/Flutter), desktop apps, game development, or ML/AI model training. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 16-fullstack-webapp

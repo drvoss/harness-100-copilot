@@ -1,6 +1,6 @@
 ---
 name: api-security-patterns
-description: "Use when reviewing or designing API security controls — provides OWASP API Security Top 10 (2023 edition) mitigations, OAuth 2.0 implementation patterns, JWT hardening checklist, and rate limiting configurations. Supporting skill for the api-designer harness."
+description: "Use when reviewing or designing API security controls — provides OWASP API Security Top 10 (2023 edition) mitigations, OAuth 2.0 implementation patterns, JWT hardening checklist, and rate limiting configurations. Supporting skill for the api-designer harness. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting-skill
   harness: 18-api-designer

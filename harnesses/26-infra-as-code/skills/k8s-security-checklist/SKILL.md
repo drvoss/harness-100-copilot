@@ -1,6 +1,6 @@
 ---
 name: k8s-security-checklist
-description: "Use when securing Kubernetes workloads and clusters — provides CIS Kubernetes Benchmark controls, Pod Security Standards configuration, NetworkPolicy templates, and RBAC hardening patterns."
+description: "Use when securing Kubernetes workloads and clusters — provides CIS Kubernetes Benchmark controls, Pod Security Standards configuration, NetworkPolicy templates, and RBAC hardening patterns. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 26-infra-as-code

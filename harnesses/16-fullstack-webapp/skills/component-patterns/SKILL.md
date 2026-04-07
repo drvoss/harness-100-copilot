@@ -1,6 +1,6 @@
 ---
 name: component-patterns
-description: "Use when building React/Next.js components — provides patterns for component architecture, state management, data fetching, and folder structure. Extends the frontend-dev agent."
+description: "Use when building React/Next.js components — provides patterns for component architecture, state management, data fetching, and folder structure. Extends the frontend-dev agent. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 16-fullstack-webapp

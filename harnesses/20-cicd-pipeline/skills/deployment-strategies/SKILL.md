@@ -1,6 +1,6 @@
 ---
 name: deployment-strategies
-description: "Use when choosing or implementing a deployment strategy — provides Blue-Green, Canary, Rolling, and Feature Flag patterns with DORA metrics impact analysis. Extends the pipeline-designer agent."
+description: "Use when choosing or implementing a deployment strategy — provides Blue-Green, Canary, Rolling, and Feature Flag patterns with DORA metrics impact analysis. Extends the pipeline-designer agent. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 20-cicd-pipeline

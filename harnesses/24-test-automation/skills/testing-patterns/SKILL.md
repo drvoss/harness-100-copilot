@@ -1,6 +1,6 @@
 ---
 name: testing-patterns
-description: "Use when you need reference patterns for structuring tests — provides Given/When/Then, test doubles taxonomy, test data builders, and common testing idioms for unit, integration, and E2E contexts."
+description: "Use when you need reference patterns for structuring tests — provides Given/When/Then, test doubles taxonomy, test data builders, and common testing idioms for unit, integration, and E2E contexts. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 24-test-automation

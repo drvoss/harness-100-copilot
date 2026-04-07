@@ -1,6 +1,6 @@
 ---
 name: cross-platform-strategy
-description: "Use when deciding between React Native, Flutter, Kotlin Multiplatform Mobile, or native (SwiftUI + Jetpack Compose) development. Provides a scored decision matrix, team-skill-based recommendation tree, and deep-dive analysis for each option covering performance, code sharing, ecosystem maturity, and timeline impact."
+description: "Use when deciding between React Native, Flutter, Kotlin Multiplatform Mobile, or native (SwiftUI + Jetpack Compose) development. Provides a scored decision matrix, team-skill-based recommendation tree, and deep-dive analysis for each option covering performance, code sharing, ecosystem maturity, and timeline impact. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 17-mobile-app-builder

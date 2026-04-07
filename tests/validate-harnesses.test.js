@@ -43,8 +43,12 @@ describe('Harness Structure Validation', () => {
         const content = readFile(harnessMd)
         if (!content) return
         expect(content).toMatch(/##\s+Attribution/i)
-        expect(content).toMatch(/revfactory\/harness-100/i)
-        expect(content).toMatch(/Apache 2\.0/i)
+        const isPortedHarness = content.match(/revfactory\/harness-100/i)
+        const isGeneratedHarness = content.match(/Generated harness/i)
+        expect(isPortedHarness || isGeneratedHarness).toBeTruthy()
+        if (isPortedHarness) {
+          expect(content).toMatch(/Apache 2\.0/i)
+        }
       })
 
       test('agents/ directory exists and is not empty', () => {
@@ -135,7 +139,7 @@ describe('Harness Structure Validation', () => {
         agentFiles.forEach(agentFile => {
           const content = readFile(path.join(agentsDir, agentFile))
           if (!content) return
-          if (agentFile.includes('synthesizer') || agentFile.includes('reporter') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md' || agentFile === 'infra-reviewer.md' || agentFile === 'performance-reviewer.md' || agentFile === 'action-planner.md' || agentFile === 'community-planner.md' || agentFile === 'test-reviewer.md' || agentFile === 'migration-reviewer.md' || agentFile === 'app-store-optimizer.md') return // terminal agents
+          if (agentFile.includes('synthesizer') || agentFile.includes('reporter') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md' || agentFile === 'infra-reviewer.md' || agentFile === 'performance-reviewer.md' || agentFile === 'action-planner.md' || agentFile === 'community-planner.md' || agentFile === 'test-reviewer.md' || agentFile === 'data-reviewer.md' || agentFile === 'deployment-planner.md' || agentFile === 'migration-reviewer.md' || agentFile === 'app-store-optimizer.md') return // terminal agents
           expect(content).toMatch(/_workspace\/messages\//i)
         })
       })

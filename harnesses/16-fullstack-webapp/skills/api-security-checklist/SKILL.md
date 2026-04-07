@@ -1,6 +1,6 @@
 ---
 name: api-security-checklist
-description: "Use when reviewing or building a backend API for security — provides OWASP API Security Top 10 checklist, authentication patterns, and security header configuration. Extends the backend-dev agent."
+description: "Use when reviewing or building a backend API for security — provides OWASP API Security Top 10 checklist, authentication patterns, and security header configuration. Extends the backend-dev agent. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 16-fullstack-webapp

@@ -1,6 +1,6 @@
 ---
 name: data-quality-checklist
-description: "Use when configuring data quality monitoring — provides quality dimension definitions, Great Expectations patterns, data contract templates, and dbt test configurations for comprehensive data validation."
+description: "Use when configuring data quality monitoring — provides quality dimension definitions, Great Expectations patterns, data contract templates, and dbt test configurations for comprehensive data validation. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 27-data-pipeline

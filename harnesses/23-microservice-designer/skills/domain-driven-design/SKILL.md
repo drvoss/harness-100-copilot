@@ -1,6 +1,6 @@
 ---
 name: domain-driven-design
-description: "Use when applying Domain-Driven Design patterns to a business problem — provides DDD tactical and strategic pattern guidance, context mapping templates, and ubiquitous language modeling support. Does NOT cover microservice deployment or infrastructure concerns."
+description: "Use when applying Domain-Driven Design patterns to a business problem — provides DDD tactical and strategic pattern guidance, context mapping templates, and ubiquitous language modeling support. Does NOT cover microservice deployment or infrastructure concerns. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: supporting-skill
   harness: 23-microservice-designer

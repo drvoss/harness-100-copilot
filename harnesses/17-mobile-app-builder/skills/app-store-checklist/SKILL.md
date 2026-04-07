@@ -1,6 +1,6 @@
 ---
 name: app-store-checklist
-description: "Use when preparing an app for Apple App Store or Google Play submission — provides a comprehensive pre-submission checklist covering metadata character limits, screenshot specifications for all device types, review guideline compliance, privacy requirements, Data Safety form guidance, and common rejection reasons with fixes."
+description: "Use when preparing an app for Apple App Store or Google Play submission — provides a comprehensive pre-submission checklist covering metadata character limits, screenshot specifications for all device types, review guideline compliance, privacy requirements, Data Safety form guidance, and common rejection reasons with fixes. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 17-mobile-app-builder

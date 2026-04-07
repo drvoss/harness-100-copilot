@@ -1,6 +1,6 @@
 ---
 name: refactoring-catalog
-description: "Use when identifying code smells, SOLID violations, and refactoring opportunities — provides a structured catalog of code smell patterns, complexity metrics, and refactoring recipes. Extends the architecture-reviewer and performance-analyst agents."
+description: "Use when identifying code smells, SOLID violations, and refactoring opportunities — provides a structured catalog of code smell patterns, complexity metrics, and refactoring recipes. Extends the architecture-reviewer and performance-analyst agents. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: harness
   harness: 21-code-reviewer
