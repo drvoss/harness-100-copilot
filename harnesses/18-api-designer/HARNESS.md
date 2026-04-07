@@ -19,6 +19,32 @@ harnesses/18-api-designer/
     └── api-security-patterns/SKILL.md     Supporting — OWASP API Security Top 10, security controls
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| api-architect | Overall strategy, versioning, auth scheme, gateway patterns | `01_api_strategy.md` |
+| rest-specialist | RESTful endpoints, resource modeling, HTTP semantics | `02_rest_endpoints.md` |
+| graphql-specialist | GraphQL schema, queries/mutations/subscriptions, N+1 prevention | `02_graphql_schema.md` |
+| security-designer | OAuth 2.0, JWT, rate limiting, CORS, OWASP API Top 10 | `03_security_design.md` |
+| docs-generator | OpenAPI 3.0 spec, Swagger docs, SDK examples | `04_api_documentation.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/18-api-designer/agents/ .github/agents/
+cp -r harnesses/18-api-designer/skills/ .github/skills/
+```
+Then ask Copilot: `Design a REST API for a user management service`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full API design with docs | Full Pipeline (all 5) | all |
+| REST design with security | Reduced (3 agents) | api-architect → rest-specialist → security-designer |
+| Documentation only | Single | docs-generator only |
+
 ## Usage
 
 Trigger the `api-designer` skill or make a natural language request:

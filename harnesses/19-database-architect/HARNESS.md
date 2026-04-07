@@ -19,6 +19,32 @@ harnesses/19-database-architect/
     └── db-performance-checklist/SKILL.md    Supporting — index types, EXPLAIN analysis
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| schema-designer | Data modeling, normalization, ER design | `01_schema_design.md` |
+| query-optimizer | Index strategy, execution plans, slow queries | `02_query_patterns.md` |
+| migration-planner | Schema migrations, zero-downtime, rollback | `03_migration_plan.md` |
+| replication-specialist | HA topology, read replicas, failover, pooling | `04_replication_design.md` |
+| data-reviewer | Consistency, referential integrity, risk report | `05_review_report.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/19-database-architect/agents/ .github/agents/
+cp -r harnesses/19-database-architect/skills/ .github/skills/
+```
+Then ask Copilot: `Design a database for an e-commerce platform`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full database design pipeline | Full Pipeline (all 5) | all |
+| Schema and query optimization | Reduced (2 agents) | schema-designer → query-optimizer |
+| Migration planning only | Single | migration-planner only |
+
 ## Usage
 
 Trigger the `database-architect` skill or make a natural language request:

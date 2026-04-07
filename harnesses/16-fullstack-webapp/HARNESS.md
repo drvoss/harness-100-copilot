@@ -19,6 +19,32 @@ harnesses/16-fullstack-webapp/
     └── api-security-checklist/SKILL.md     Backend extension — OWASP Top 10, auth, security headers
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| architect | System design: requirements, architecture, DB, API design | `01_architecture.md` |
+| frontend-dev | Frontend: React/Next.js, UI components, state management | `src/frontend/` |
+| backend-dev | Backend: API, DB, auth, business logic | `02_api_spec.md` |
+| qa-engineer | QA: test strategy, unit/integration/E2E tests | `04_test_plan.md` |
+| devops-engineer | DevOps: CI/CD, infrastructure, deployment, monitoring | `05_deploy_guide.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/16-fullstack-webapp/agents/ .github/agents/
+cp -r harnesses/16-fullstack-webapp/skills/ .github/skills/
+```
+Then ask Copilot: `Build me a web app that does X`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full web app build | Full Pipeline (all 5) | all |
+| Design and API only | Reduced (2 agents) | architect → backend-dev |
+| Frontend only | Single | frontend-dev only |
+
 ## Usage
 
 Trigger the `fullstack-webapp` skill or make a natural language request:

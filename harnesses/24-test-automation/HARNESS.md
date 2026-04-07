@@ -19,6 +19,32 @@ harnesses/24-test-automation/
     └── testing-patterns/SKILL.md               Testing patterns: given/when/then, test doubles
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| test-strategist | Test strategy: pyramid, coverage targets, risk matrix | `01_test_strategy.md` |
+| unit-test-writer | Unit tests: AAA pattern, mocking, isolation | `02_unit_tests.md` |
+| integration-test-writer | Integration tests: DB, API contracts, service boundaries | `03_integration_tests.md` |
+| e2e-test-writer | E2E tests: Playwright/Cypress, page objects, journeys | `04_e2e_tests.md` |
+| test-reviewer | Review: coverage gaps, flaky tests, quality assessment | `05_test_review_report.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/24-test-automation/agents/ .github/agents/
+cp -r harnesses/24-test-automation/skills/ .github/skills/
+```
+Then ask Copilot: `Generate a full test suite for this service`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full test suite generation | Full Pipeline (all 5) | all |
+| Unit tests only | Reduced (2 agents) | test-strategist → unit-test-writer |
+| Coverage review only | Single | test-reviewer only |
+
 ## Usage
 
 Trigger the `test-automation` skill or make a natural language request:

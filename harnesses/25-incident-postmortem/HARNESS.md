@@ -17,6 +17,31 @@ harnesses/25-incident-postmortem/
     └── blameless-postmortem/SKILL.md             Supporting — blameless culture, psychological safety
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| incident-analyst | Timeline reconstruction, log correlation, sequence of events | `01_timeline.md` |
+| root-cause-investigator | Root cause analysis: 5 Whys and Fishbone diagram | `02_root_cause.md` |
+| impact-assessor | SLO violations, MTTR, customer impact, business cost | `03_impact_assessment.md` |
+| action-planner | Prevention actions, follow-up tasks, runbook updates | `04_action_plan.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/25-incident-postmortem/agents/ .github/agents/
+cp -r harnesses/25-incident-postmortem/skills/ .github/skills/
+```
+Then ask Copilot: `Run a postmortem for last night's outage`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full postmortem | Full Pipeline (all 4) | all |
+| Timeline and root cause only | Reduced (2 agents) | incident-analyst → root-cause-investigator |
+| Action plan only | Single | action-planner only |
+
 ## Usage
 
 Trigger the `incident-postmortem` skill or make a natural language request:

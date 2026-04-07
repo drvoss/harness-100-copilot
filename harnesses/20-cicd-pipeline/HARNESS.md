@@ -19,6 +19,32 @@ harnesses/20-cicd-pipeline/
     └── deployment-strategies/SKILL.md     Pipeline extension — Blue-Green/Canary/Rolling, DORA metrics
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| pipeline-designer | Pipeline design: stages, triggers, branch strategies | `01_pipeline_design.md` |
+| infra-engineer | Infrastructure: runners, containers, env vars, secrets | `02_pipeline_config/` |
+| monitoring-specialist | Monitoring: metrics, alerts, dashboards, SLA | `03_monitoring.md` |
+| security-scanner | Security: SAST, DAST, dependencies, containers | `04_security_scan.md` |
+| pipeline-reviewer | Review: efficiency, reliability, security, alignment | `05_review_report.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/20-cicd-pipeline/agents/ .github/agents/
+cp -r harnesses/20-cicd-pipeline/skills/ .github/skills/
+```
+Then ask Copilot: `Create a CI/CD pipeline for my Node.js app`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full CI/CD pipeline build | Full Pipeline (all 5) | all |
+| Pipeline design and infrastructure | Reduced (2 agents) | pipeline-designer → infra-engineer |
+| Security scanning only | Single | security-scanner only |
+
 ## Usage
 
 Trigger the `cicd-pipeline` skill or make a natural language request:

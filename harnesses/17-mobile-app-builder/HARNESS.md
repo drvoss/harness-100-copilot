@@ -19,6 +19,32 @@ harnesses/17-mobile-app-builder/
     └── app-store-checklist/SKILL.md       App Store + Google Play review compliance checklist
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| ux-architect | UX/UI design: navigation, design system, wireframes, accessibility | `01_ux_spec.md` |
+| ios-specialist | iOS/SwiftUI: MVVM, TCA, App Store requirements | `02_ios_implementation.md` |
+| android-specialist | Android/Jetpack Compose: MVVM, Hilt, Google Play compliance | `02_android_implementation.md` |
+| state-manager | Cross-platform state: KMM, shared business logic, offline-first | `03_state_design.md` |
+| app-store-optimizer | Store listing: metadata, screenshots, ASO, compliance | `04_store_listing.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/17-mobile-app-builder/agents/ .github/agents/
+cp -r harnesses/17-mobile-app-builder/skills/ .github/skills/
+```
+Then ask Copilot: `Build a mobile app for task management`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full mobile app build | Full Pipeline (all 5) | all |
+| UX and iOS only | Reduced (2 agents) | ux-architect → ios-specialist |
+| App store submission only | Single | app-store-optimizer only |
+
 ## Usage
 
 Trigger the `mobile-app-builder` skill or make a natural language request:

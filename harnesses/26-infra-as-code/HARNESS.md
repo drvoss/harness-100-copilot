@@ -19,6 +19,32 @@ harnesses/26-infra-as-code/
     └── k8s-security-checklist/SKILL.md     Supporting — CIS Kubernetes Benchmark, Pod Security Standards
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| infra-architect | Cloud infra architecture: multi-region, security zones, cost estimation | `01_infra_architecture.md` |
+| terraform-specialist | Terraform modules: resource definitions, state management, workspaces | `02_terraform_modules.md` |
+| k8s-specialist | Kubernetes manifests: deployments, services, ingress, namespaces, RBAC | `03_k8s_manifests.md` |
+| security-hardener | Security hardening: IAM least privilege, network policies, encryption | `04_security_hardening.md` |
+| infra-reviewer | Review & cost optimization: resource sizing, waste, compliance | `05_review_report.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/26-infra-as-code/agents/ .github/agents/
+cp -r harnesses/26-infra-as-code/skills/ .github/skills/
+```
+Then ask Copilot: `Design cloud infra for my microservices app on AWS`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full infra design and review | Full Pipeline (all 5) | all |
+| Terraform only | Reduced (2 agents) | infra-architect → terraform-specialist |
+| Security review only | Single | security-hardener only |
+
 ## Usage
 
 Trigger the `infra-as-code` skill or make a natural language request:

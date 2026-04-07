@@ -17,6 +17,32 @@ harnesses/29-performance-optimizer/
   - core-web-vitals/SKILL.md - Supporting - LCP/FID/CLS targets, measurement tools, optimization
   - db-query-optimization/SKILL.md - Supporting - EXPLAIN plan patterns, index tuning, N+1 detection
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| profiling-analyst | Performance profiling: bottleneck identification, baseline metrics, flame graphs | `01_profiling_report.md` |
+| frontend-optimizer | Frontend performance: Core Web Vitals, bundle optimization, lazy loading, CDN | `02_frontend_optimizations.md` |
+| backend-optimizer | Backend performance: API latency, DB query optimization, caching strategy | `03_backend_optimizations.md` |
+| infra-tuner | Infrastructure tuning: auto-scaling, resource limits, connection pooling | `04_infra_tuning.md` |
+| performance-reviewer | Improvement validation: before/after comparison, ROI estimation | `05_performance_review.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/29-performance-optimizer/agents/ .github/agents/
+cp -r harnesses/29-performance-optimizer/skills/ .github/skills/
+```
+Then ask Copilot: `My app is slow, find the bottlenecks`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full performance optimization | Full Pipeline (all 5) | all |
+| Backend optimization only | Reduced (2 agents) | profiling-analyst → backend-optimizer |
+| Infrastructure tuning only | Single | infra-tuner only |
+
 ## Usage
 
 Trigger the performance-optimizer skill or make a natural language request:

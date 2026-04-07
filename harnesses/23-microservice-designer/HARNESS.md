@@ -19,6 +19,32 @@ harnesses/23-microservice-designer/
     └── service-mesh-patterns/SKILL.md            Istio/Linkerd patterns, traffic management, mTLS
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| domain-modeler | DDD: bounded contexts, aggregate roots, domain events, context map | `01_domain_model.md` |
+| service-designer | Services: single responsibility, API contracts, data ownership | `02_service_design.md` |
+| api-gateway-specialist | Gateway: routing, load balancing, circuit breakers, observability | `03_gateway_design.md` |
+| data-architect | Data: per-service DBs, CQRS/Event Sourcing, sagas, consistency | `04_data_architecture.md` |
+| deployment-planner | Kubernetes: manifests, Helm charts, HPA, GitOps workflow | `05_deployment_plan.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/23-microservice-designer/agents/ .github/agents/
+cp -r harnesses/23-microservice-designer/skills/ .github/skills/
+```
+Then ask Copilot: `Design microservices for this monolith`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full microservice design | Full Pipeline (all 5) | all |
+| Service design only | Reduced (2 agents) | domain-modeler → service-designer |
+| Deployment config only | Single | deployment-planner only |
+
 ## Usage
 
 Trigger the `microservice-designer` skill or make a natural language request:

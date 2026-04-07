@@ -19,6 +19,32 @@ harnesses/27-data-pipeline/
     └── data-quality-checklist/SKILL.md      Supporting — data quality dimensions, Great Expectations patterns
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| pipeline-architect | Data pipeline architecture: batch vs streaming, tech selection, SLA | `01_pipeline_architecture.md` |
+| ingestion-specialist | Data ingestion: sources, connectors, schema registry, CDC | `02_ingestion_design.md` |
+| transformation-engineer | ETL/ELT transformation: dbt models, Spark jobs, data quality rules | `03_transformation_logic.md` |
+| quality-monitor | Data quality monitoring: Great Expectations, contracts, lineage | `04_quality_monitoring.md` |
+| pipeline-reviewer | Pipeline review: performance, cost, reliability | `05_pipeline_review.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/27-data-pipeline/agents/ .github/agents/
+cp -r harnesses/27-data-pipeline/skills/ .github/skills/
+```
+Then ask Copilot: `Design a data pipeline for our event logs`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full pipeline design and review | Full Pipeline (all 5) | all |
+| Ingestion and transformation only | Reduced (2 agents) | ingestion-specialist → transformation-engineer |
+| Data quality only | Single | quality-monitor only |
+
 ## Usage
 
 Trigger the `data-pipeline` skill or make a natural language request:

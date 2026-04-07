@@ -17,6 +17,31 @@ harnesses/30-open-source-launcher/
     └── oss-checklist/SKILL.md             Supporting — launch checklist, license matrix
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| oss-strategist | License selection, governance, competitive positioning | `01_oss_strategy.md` |
+| readme-writer | README, CONTRIBUTING, CoC, SECURITY docs | `02_documentation.md` |
+| ci-setup-specialist | GitHub Actions, release automation, semantic versioning | `03_ci_setup.md` |
+| community-planner | Launch plan, issue templates, roadmap | `04_community_plan.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/30-open-source-launcher/agents/ .github/agents/
+cp -r harnesses/30-open-source-launcher/skills/ .github/skills/
+```
+Then ask Copilot: `Help me open source my project`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full OSS launch | Full Pipeline (all 4) | all |
+| Strategy and documentation only | Reduced (2 agents) | oss-strategist → readme-writer |
+| CI setup only | Single | ci-setup-specialist only |
+
 ## Usage
 
 Trigger the `open-source-launcher` skill or make a natural language request:

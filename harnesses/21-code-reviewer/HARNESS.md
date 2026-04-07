@@ -19,6 +19,32 @@ harnesses/21-code-reviewer/
     └── refactoring-catalog/SKILL.md   Architecture extension — code smells, SOLID violations, metrics
 ```
 
+## Agent Team
+
+| Agent | Role | Output |
+|-------|------|--------|
+| style-inspector | Code style: conventions, naming, readability | `01_style_review.md` |
+| security-analyst | Security: vulnerabilities, injection, auth, exposure | `02_security_review.md` |
+| performance-analyst | Performance: complexity, memory, concurrency, queries | `03_performance_review.md` |
+| architecture-reviewer | Architecture: patterns, SOLID, dependencies, coupling | `04_architecture_review.md` |
+| review-synthesizer | Synthesis: prioritization, conflicts, final verdict | `05_review_summary.md` |
+
+## Quick Start
+
+```bash
+cp -r harnesses/21-code-reviewer/agents/ .github/agents/
+cp -r harnesses/21-code-reviewer/skills/ .github/skills/
+```
+Then ask Copilot: `Review this code`
+
+## Scale Modes
+
+| Request Pattern | Mode | Agents Used |
+|----------------|------|-------------|
+| Full code review | Full Pipeline (all 5) | all |
+| Security and architecture review | Reduced (2 agents) | security-analyst → architecture-reviewer |
+| Quick style check | Single | style-inspector only |
+
 ## Usage
 
 Trigger the `code-reviewer` skill or make a natural language request:
