@@ -22,7 +22,6 @@ const TRIGGER_FIRST_PATTERNS = [
 
 const FOLLOWUP_PATTERNS = [
   /re-run/i,
-  /update/i,
   /revise/i,
   /supplement/i,
   /also triggers on/i,

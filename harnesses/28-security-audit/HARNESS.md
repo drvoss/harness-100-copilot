@@ -37,7 +37,7 @@ cp -r harnesses/28-security-audit/skills/ .github/skills/
 ```
 Then ask Copilot: `Security audit this codebase`
 
-### Scale Modes
+## Scale Modes
 
 | Request Pattern | Mode | Agents Used |
 |----------------|------|-------------|

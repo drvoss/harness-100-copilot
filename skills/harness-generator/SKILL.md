@@ -22,13 +22,13 @@ orchestrator skill, and HARNESS.md — all following this repository's file-bus 
 ## Execution Mode
 
 **Sequential Generation** — Six phases produce all files needed for a working harness.
-Read `references/copilot-adaptation-rules.md` before starting.
+Read `skills/harness-generator/references/copilot-adaptation-rules.md` before starting.
 
 ## Pre-Flight Checks
 
 - [ ] Confirm domain is not already covered — check `harnesses/` directory
 - [ ] Identify next available harness number (check existing nn- prefixes)
-- [ ] Read `references/agent-design-patterns.md` to select the right pattern
+- [ ] Read `skills/harness-generator/references/agent-design-patterns.md` to select the right pattern
 - [ ] Read `templates/agent-template.md` and `templates/orchestrator-skill-template.md`
 
 ## Phase 1: Domain Analysis

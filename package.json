@@ -2,7 +2,6 @@
   "name": "harness-100-copilot",
   "version": "0.1.0",
   "description": "100 production-grade multi-agent harnesses for GitHub Copilot CLI",
-  "main": "index.js",
   "bin": {
     "harness-detect": "./bin/harness-detect.mjs"
   },

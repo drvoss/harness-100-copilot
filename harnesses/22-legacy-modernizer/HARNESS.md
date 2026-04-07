@@ -37,7 +37,7 @@ cp -r harnesses/22-legacy-modernizer/skills/ .github/skills/
 ```
 Then ask Copilot: `Help me modernize this legacy Java monolith`
 
-### Scale Modes
+## Scale Modes
 
 | Request Pattern | Mode | Agents Used |
 |----------------|------|-------------|
