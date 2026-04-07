@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "description": "100 production-grade multi-agent harnesses for GitHub Copilot CLI",
   "main": "index.js",
+  "bin": {
+    "harness-detect": "./bin/harness-detect.mjs"
+  },
   "scripts": {
     "test": "jest --testPathPattern=tests/",
     "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _workspace",
-    "validate": "npm test && npm run lint:md"
+    "validate": "npm test && npm run check-descriptions",
+    "stats": "node scripts/update-stats.js",
+    "check-descriptions": "node scripts/check-descriptions.js",
+    "harness-detect": "node bin/harness-detect.mjs"
   },
   "repository": {
     "type": "git",
@@ -24,6 +30,9 @@
   ],
   "author": "drvoss",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
   "devDependencies": {
     "jest": "^29.0.0",
     "markdownlint-cli": "^0.39.0"

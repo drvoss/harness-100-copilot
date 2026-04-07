@@ -1,0 +1,43 @@
+name: Validate Harnesses
+
+on:
+  push:
+    paths:
+      - 'harnesses/**'
+      - 'templates/**'
+      - 'tests/**'
+      - 'scripts/**'
+  pull_request:
+    paths:
+      - 'harnesses/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run harness validation
+        run: npm test
+
+      - name: Check descriptions follow trigger-first pattern
+        run: npm run check-descriptions
+
+      - name: Count harnesses
+        run: |
+          count=$(find harnesses -name "HARNESS.md" 2>/dev/null | wc -l)
+          echo "Total harnesses: $count"
+          echo "harness_count=$count" >> "$GITHUB_ENV"
+
+      - name: Update README badge (main branch only)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: node scripts/update-stats.js

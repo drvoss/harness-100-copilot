@@ -1,0 +1,51 @@
+name: PR Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+
+jobs:
+  check-harness-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate changed harnesses
+        run: |
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          if echo "$changed" | grep -q "^harnesses/"; then
+            echo "Harness files changed — running validation"
+            npm test
+          else
+            echo "No harness files changed — skipping harness validation"
+          fi
+
+      - name: Check Attribution in new HARNESS.md files
+        run: |
+          new_files=$(git diff --name-only --diff-filter=A origin/${{ github.base_ref }}...HEAD | grep "HARNESS\.md" || true)
+          if [ -n "$new_files" ]; then
+            failed=0
+            for f in $new_files; do
+              if ! grep -q "## Attribution" "$f"; then
+                echo "❌ Missing Attribution section in $f"
+                failed=1
+              else
+                echo "✅ Attribution found in $f"
+              fi
+            done
+            [ $failed -eq 0 ] || exit 1
+          fi
+
+      - name: Check trigger-first descriptions
+        run: npm run check-descriptions
