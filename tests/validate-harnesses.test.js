@@ -121,8 +121,8 @@ describe('Harness Structure Validation', () => {
         agentFiles.forEach(agentFile => {
           const content = readFile(path.join(agentsDir, agentFile))
           if (!content) return
-          // Terminal agents (synthesizer, pipeline-reviewer, devops-engineer) do not send outgoing messages
-          if (agentFile.includes('synthesizer') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md') return
+          // Terminal agents (synthesizer, reporter, pipeline-reviewer, devops-engineer) do not send outgoing messages
+          if (agentFile.includes('synthesizer') || agentFile.includes('reporter') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md' || agentFile === 'infra-reviewer.md' || agentFile === 'performance-reviewer.md' || agentFile === 'action-planner.md' || agentFile === 'community-planner.md') return
           expect(content).toMatch(/##\s+Message Protocol/i)
         })
       })
@@ -135,7 +135,7 @@ describe('Harness Structure Validation', () => {
         agentFiles.forEach(agentFile => {
           const content = readFile(path.join(agentsDir, agentFile))
           if (!content) return
-          if (agentFile.includes('synthesizer') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md') return // terminal agents
+          if (agentFile.includes('synthesizer') || agentFile.includes('reporter') || agentFile === 'pipeline-reviewer.md' || agentFile === 'devops-engineer.md' || agentFile === 'infra-reviewer.md' || agentFile === 'performance-reviewer.md' || agentFile === 'action-planner.md' || agentFile === 'community-planner.md') return // terminal agents
           expect(content).toMatch(/_workspace\/messages\//i)
         })
       })
