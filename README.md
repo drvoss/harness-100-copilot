@@ -12,8 +12,8 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="Apache 2.0" /></a>
   <a href="#"><img src="https://img.shields.io/badge/copilot--cli-ready-28a745?logo=github" alt="Copilot CLI Ready" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/harnesses-3%20(Phase%201%20of%20100)-orange" alt="3 Harnesses (Phase 1)" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/agents-15-blueviolet" alt="15 Agents" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/harnesses-15%20of%20100-yellow" alt="3 Harnesses (Phase 1)" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/agents-73-blueviolet" alt="15 Agents" /></a>
   <a href="#"><img src="https://img.shields.io/badge/parity-~96%25-green" alt="~96% parity" /></a>
 </p>
 
@@ -27,7 +27,7 @@
 
 **harness-100-copilot** is a port of [revfactory/harness-100](https://github.com/revfactory/harness-100) for **GitHub Copilot CLI**.
 
-The original harness-100 provides 100 production-grade multi-agent team harnesses for Claude Code, where agents communicate via `SendMessage`. This project adapts the available Phase 1 harnesses (3 of 100 planned) to work with Copilot CLI's file-based message bus pattern, achieving **~96% functional parity**.
+The original harness-100 provides 100 production-grade multi-agent team harnesses for Claude Code, where agents communicate via `SendMessage`. This project adapts the available Phase 2 harnesses (15 of 100 planned) to work with Copilot CLI's file-based message bus pattern, achieving **~96% functional parity**.
 
 > **What's a harness?** A pre-assembled team of 4-7 specialist agents that collaborate through a structured pipeline to complete complex tasks — like building a full-stack web app, reviewing a PR, or setting up a CI/CD pipeline.
 
@@ -37,9 +37,9 @@ The original harness-100 provides 100 production-grade multi-agent team harnesse
 
 | Attribute | Value |
 |-----------|-------|
-| Total harnesses | 3 available now (Phase 1); 100 planned across 10 domains |
-| Agent definitions | 15 now (489 at full 100-harness target) |
-| Skills (orchestrator + domain) | 9 now (315 at full 100-harness target) |
+| Total harnesses | 15 available now (Phase 2 complete); 100 planned across 10 domains |
+| Agent definitions | 73 now (489 at full 100-harness target) |
+| Skills (orchestrator + domain) | 43 now (315 at full 100-harness target) |
 | Functional parity vs. original | ~96% |
 | Key adaptation | `SendMessage` → file-based message bus |
 | Primary use case | Complex multi-agent workflows in Copilot CLI |
@@ -98,25 +98,25 @@ Each agent writes its output and a structured message summary to `_workspace/mes
 
 ## Harness Categories
 
-### ✅ Category 2: Software Development & DevOps (16-30) — Phase 1 (Available Now)
+### ✅ Category 2: Software Development & DevOps (16-30) — Phase 2 (Available Now)
 
 | # | Harness | Description | Status |
 |---|---------|-------------|--------|
 | 16 | [fullstack-webapp](harnesses/16-fullstack-webapp/) | Full-stack web app: design → frontend → backend → test → deploy | ✅ Available |
-| 17 | mobile-app-builder | Mobile app: UI/UX, code, API, store deployment | 🔜 Planned |
-| 18 | api-designer | REST/GraphQL API: design, docs, mocks, tests | 🔜 Planned |
-| 19 | database-architect | Database: modeling, optimization, migrations | 🔜 Planned |
+| 17 | [mobile-app-builder](harnesses/17-mobile-app-builder/) | Mobile app: UI/UX, code, API, store deployment | ✅ Available |
+| 18 | [api-designer](harnesses/18-api-designer/) | REST/GraphQL API: design, docs, mocks, tests | ✅ Available |
+| 19 | [database-architect](harnesses/19-database-architect/) | Database: modeling, optimization, migrations | ✅ Available |
 | 20 | [cicd-pipeline](harnesses/20-cicd-pipeline/) | CI/CD: design, security gates, monitoring | ✅ Available |
 | 21 | [code-reviewer](harnesses/21-code-reviewer/) | Code review: style, security, performance, architecture | ✅ Available |
-| 22 | legacy-modernizer | Legacy code modernization and refactoring | 🔜 Planned |
-| 23 | microservice-designer | Microservice architecture and decomposition | 🔜 Planned |
-| 24 | test-automation | Test automation strategy and implementation | 🔜 Planned |
-| 25 | incident-postmortem | Incident analysis and postmortem generation | 🔜 Planned |
-| 26 | infra-as-code | Infrastructure as Code with Terraform/Pulumi | 🔜 Planned |
-| 27 | data-pipeline | Data pipeline design and implementation | 🔜 Planned |
-| 28 | security-audit | Comprehensive security audit | 🔜 Planned |
-| 29 | performance-optimizer | Application performance optimization | 🔜 Planned |
-| 30 | open-source-launcher | Open source project launch | 🔜 Planned |
+| 22 | [legacy-modernizer](harnesses/22-legacy-modernizer/) | Legacy code modernization and refactoring | ✅ Available |
+| 23 | [microservice-designer](harnesses/23-microservice-designer/) | Microservice architecture and decomposition | ✅ Available |
+| 24 | [test-automation](harnesses/24-test-automation/) | Test automation strategy and implementation | ✅ Available |
+| 25 | [incident-postmortem](harnesses/25-incident-postmortem/) | Incident analysis and postmortem generation | ✅ Available |
+| 26 | [infra-as-code](harnesses/26-infra-as-code/) | Infrastructure as Code with Terraform/Kubernetes | ✅ Available |
+| 27 | [data-pipeline](harnesses/27-data-pipeline/) | Data pipeline design and implementation | ✅ Available |
+| 28 | [security-audit](harnesses/28-security-audit/) | Comprehensive security audit | ✅ Available |
+| 29 | [performance-optimizer](harnesses/29-performance-optimizer/) | Application performance optimization | ✅ Available |
+| 30 | [open-source-launcher](harnesses/30-open-source-launcher/) | Open source project launch | ✅ Available |
 
 ### 🔜 Other Categories (Coming Soon)
 

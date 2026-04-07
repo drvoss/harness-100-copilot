@@ -51,6 +51,27 @@ describe('Harness Structure Validation', () => {
         }
       })
 
+      test('HARNESS.md contains Agent Team section', () => {
+        const harnessMd = path.join(harnessPath, 'HARNESS.md')
+        const content = readFile(harnessMd)
+        if (!content) return
+        expect(content).toMatch(/^##\s+Agent Team/im)
+      })
+
+      test('HARNESS.md contains Quick Start section', () => {
+        const harnessMd = path.join(harnessPath, 'HARNESS.md')
+        const content = readFile(harnessMd)
+        if (!content) return
+        expect(content).toMatch(/^##\s+Quick Start/im)
+      })
+
+      test('HARNESS.md contains Scale Modes section', () => {
+        const harnessMd = path.join(harnessPath, 'HARNESS.md')
+        const content = readFile(harnessMd)
+        if (!content) return
+        expect(content).toMatch(/^##\s+Scale Modes/im)
+      })
+
       test('agents/ directory exists and is not empty', () => {
         const agentsDir = path.join(harnessPath, 'agents')
         expect(fs.existsSync(agentsDir)).toBe(true)

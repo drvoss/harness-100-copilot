@@ -72,10 +72,10 @@ All artifacts are saved in `_workspace/` in your project:
 
 ```bash
 # Copy agent definitions to your project
-cp -r harnesses/24-test-automation/agents/ /path/to/your/project/.github/agents/
+cp -r harnesses/24-test-automation/agents/ .github/agents/
 
 # Copy skill definitions
-cp -r harnesses/24-test-automation/skills/ /path/to/your/project/.github/skills/
+cp -r harnesses/24-test-automation/skills/ .github/skills/
 ```
 
 ## Attribution

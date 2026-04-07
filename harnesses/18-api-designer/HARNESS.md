@@ -87,10 +87,10 @@ _workspace/
 
 ```bash
 # Copy agent definitions to your project
-cp -r harnesses/18-api-designer/agents/ /path/to/your/project/.github/agents/
+cp -r harnesses/18-api-designer/agents/ .github/agents/
 
 # Copy skill definitions
-cp -r harnesses/18-api-designer/skills/ /path/to/your/project/.github/skills/
+cp -r harnesses/18-api-designer/skills/ .github/skills/
 ```
 
 ## Attribution

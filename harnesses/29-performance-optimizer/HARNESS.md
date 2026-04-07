@@ -64,8 +64,8 @@ All artifacts are saved in _workspace/ in your project:
 ## Installation
 
 Copy agents and skills to your project:
-cp -r harnesses/29-performance-optimizer/agents/ /path/to/project/.github/agents/
-cp -r harnesses/29-performance-optimizer/skills/ /path/to/project/.github/skills/
+cp -r harnesses/29-performance-optimizer/agents/ .github/agents/
+cp -r harnesses/29-performance-optimizer/skills/ .github/skills/
 
 ## Attribution
 

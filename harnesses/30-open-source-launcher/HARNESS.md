@@ -76,10 +76,10 @@ _workspace/
 
 ```bash
 # Copy agent definitions to your project
-cp -r harnesses/30-open-source-launcher/agents/ /path/to/your/project/.github/agents/
+cp -r harnesses/30-open-source-launcher/agents/ .github/agents/
 
 # Copy skill definitions
-cp -r harnesses/30-open-source-launcher/skills/ /path/to/your/project/.github/skills/
+cp -r harnesses/30-open-source-launcher/skills/ .github/skills/
 ```
 
 ## Attribution

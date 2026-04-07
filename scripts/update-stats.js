@@ -73,14 +73,22 @@ if (!fs.existsSync(readmePath)) {
 }
 
 let readme = fs.readFileSync(readmePath, 'utf8')
-const updated = readme.replace(
-  /harnesses-[^-]+-[a-z]+\.svg/,
-  `harnesses-${badgeText}-${color}.svg`
+
+// Update harness count badge (shields.io URLs have no .svg suffix)
+const updatedHarness = readme.replace(
+  /badge\/harnesses-[^"']+/,
+  `badge/harnesses-${badgeText}-${color}`
+)
+
+// Update agents count badge
+const updated = updatedHarness.replace(
+  /badge\/agents-\d+-[a-z]+/,
+  `badge/agents-${agents}-blueviolet`
 )
 
 if (updated !== readme) {
   fs.writeFileSync(readmePath, updated)
-  console.log(`README.md badge updated: ${harnesses} harnesses (${color})`)
+  console.log(`README.md badges updated: ${harnesses} harnesses (${color}), ${agents} agents`)
 } else {
   console.log('README.md badge pattern not found — no update made')
 }

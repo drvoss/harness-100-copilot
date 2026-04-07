@@ -67,10 +67,10 @@ All artifacts are saved in `_workspace/` in your project:
 
 ```bash
 # Copy agent definitions to your project
-cp -r harnesses/21-code-reviewer/agents/ /path/to/your/project/.github/agents/
+cp -r harnesses/21-code-reviewer/agents/ .github/agents/
 
 # Copy skill definitions
-cp -r harnesses/21-code-reviewer/skills/ /path/to/your/project/.github/skills/
+cp -r harnesses/21-code-reviewer/skills/ .github/skills/
 ```
 
 ## Attribution

@@ -76,10 +76,10 @@ incident-analyst → root-cause-investigator → impact-assessor → action-plan
 
 ```bash
 # Copy agent definitions to your project
-cp -r harnesses/25-incident-postmortem/agents/ /path/to/your/project/.github/agents/
+cp -r harnesses/25-incident-postmortem/agents/ .github/agents/
 
 # Copy skill definitions
-cp -r harnesses/25-incident-postmortem/skills/ /path/to/your/project/.github/skills/
+cp -r harnesses/25-incident-postmortem/skills/ .github/skills/
 ```
 
 ## Attribution

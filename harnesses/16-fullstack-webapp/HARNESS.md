@@ -69,10 +69,10 @@ Workspace documents are saved in `_workspace/`; source code is written to the pr
 
 ```bash
 # Copy agent definitions to your project
-cp -r harnesses/16-fullstack-webapp/agents/ /path/to/your/project/.github/agents/
+cp -r harnesses/16-fullstack-webapp/agents/ .github/agents/
 
 # Copy skill definitions
-cp -r harnesses/16-fullstack-webapp/skills/ /path/to/your/project/.github/skills/
+cp -r harnesses/16-fullstack-webapp/skills/ .github/skills/
 ```
 
 ## Attribution
