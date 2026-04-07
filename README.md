@@ -12,8 +12,8 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="Apache 2.0" /></a>
   <a href="#"><img src="https://img.shields.io/badge/copilot--cli-ready-28a745?logo=github" alt="Copilot CLI Ready" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/harnesses-15%20of%20100-yellow" alt="3 Harnesses (Phase 1)" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/agents-73-blueviolet" alt="15 Agents" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/harnesses-15%20of%20100-yellow" alt="15 of 100 Harnesses" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/agents-73-blueviolet" alt="73 Agents" /></a>
   <a href="#"><img src="https://img.shields.io/badge/parity-~96%25-green" alt="~96% parity" /></a>
 </p>
 

@@ -20,10 +20,22 @@ npm install
 Browse the `harnesses/` directory and read the `HARNESS.md` for each harness to understand
 what it does and which agents it includes.
 
-Available harnesses (Phase 1):
+Available harnesses (Phase 2 — all 15 ready):
 - `16-fullstack-webapp` — Full-stack web app development
+- `17-mobile-app-builder` — Cross-platform mobile app design and build
+- `18-api-designer` — API design: OpenAPI, security, versioning
+- `19-database-architect` — DB architecture: schema, indexing, migration
 - `20-cicd-pipeline` — CI/CD pipeline design and setup
 - `21-code-reviewer` — Multi-domain code review
+- `22-legacy-modernizer` — Legacy codebase modernization and migration
+- `23-microservice-designer` — Microservice decomposition and deployment
+- `24-test-automation` — Unit, integration, and E2E test automation
+- `25-incident-postmortem` — Blameless postmortem and root cause analysis
+- `26-infra-as-code` — Terraform, security, and cost optimization
+- `27-data-pipeline` — ETL pipeline architecture and data quality
+- `28-security-audit` — Threat modeling, SAST, SCA, config review
+- `29-performance-optimizer` — Profiling, frontend/backend optimization
+- `30-open-source-launcher` — Open source launch and community setup
 
 ## Step 3: Install into Your Project
 
