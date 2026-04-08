@@ -204,3 +204,64 @@ harnesses/28-security-audit/
 - Files over 300 lines: **required** table of contents at the top of the file
 - Domain separation: one file per major framework (`references/owasp-top10.md`,
   not one giant `references/security.md`)
+
+---
+
+## Skill Anatomy Principles
+
+*"Process, not prose. Skills are workflows agents follow, not reference docs they read."*
+— Inspired by addyosmani/agent-skills docs/skill-anatomy.md
+
+### Each Step Must Have a Verifiable Output
+
+Every step in a SKILL.md workflow must produce a concrete, checkable artifact. "Seems right" is not done.
+
+**Wrong (no verifiable output):**
+```markdown
+### Step 2.1 — Analyzer
+task(description="Analyze the codebase and identify issues.")
+```
+
+**Right (verifiable output specified):**
+```markdown
+### Step 2.1 — Analyzer
+task(description="...Write findings to _workspace/01_analysis.md. 
+Write handoff to _workspace/messages/analyzer-to-reviewer.md with STATUS: COMPLETE.")
+```
+
+The output file IS the proof of completion. If the file doesn't exist, the step didn't complete.
+
+### Write Workflows, Not Prose
+
+Skills should describe processes agents execute, not explanations agents read. Every sentence should either:
+- Describe an action the agent takes
+- Specify a condition that determines which action to take
+- Define the output format of an action
+
+If a sentence is explanation rather than instruction, it belongs in a `references/` file, not the SKILL.md body.
+
+### Red Flags Section Is Mandatory
+
+Every SKILL.md must include a Red Flags section. This enables agents to self-detect when they're misapplying the skill:
+
+```markdown
+## Red Flags
+- {Specific observable sign that this skill is being applied incorrectly}
+- {Specific sign that a required step is being skipped}
+- {Specific sign that outputs are being accepted without verification}
+```
+
+Red flags should be concrete and observable, not vague ("if things seem wrong"). An agent reading a red flag should be able to immediately recognize whether it applies to the current situation.
+
+### Verification Section Is Mandatory
+
+Every SKILL.md must include a Verification section with a checklist of completion evidence:
+
+```markdown
+## Verification
+- [ ] {Specific file exists at specific path}
+- [ ] {Specific condition is true in that file}
+- [ ] {Domain-specific criterion that can be checked without interpretation}
+```
+
+"The pipeline ran" is not verification. "All 5 output files exist in `_workspace/` and `05_final.md` contains a verdict of APPROVED, CHANGES REQUESTED, or BLOCKED" is verification.

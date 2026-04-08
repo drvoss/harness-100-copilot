@@ -95,3 +95,103 @@ task(agent_type="general-purpose",
 1. **Normal case:** PR number or file paths provided, all 4 domain reviews complete, synthesizer produces verdict
 2. **Partial scope:** User asks "security review only" — run only security-analyst and review-synthesizer
 3. **Error case:** One agent fails to produce output — synthesizer produces partial report noting missing domain
+
+## Review Standards
+
+### Change Sizing Guidelines
+
+Small, focused changes are easier to review, faster to merge, and safer to deploy.
+
+```
+~100 lines changed   → Good. Reviewable in one sitting.
+~300 lines changed   → Acceptable if it's a single logical change.
+~1000 lines changed  → Too large. Request the author to split it.
+```
+
+When a PR is too large, use these splitting strategies:
+
+| Strategy | How | When |
+|----------|-----|------|
+| **Stack** | Submit a small change, start the next one based on it | Sequential dependencies |
+| **By file group** | Separate changes for groups needing different reviewers | Cross-cutting concerns |
+| **Horizontal** | Create shared code/stubs first, then consumers | Layered architecture |
+| **Vertical** | Break into smaller full-stack slices of the feature | Feature work |
+
+**Separate refactoring from feature work.** A change that refactors existing code and adds new behavior is two changes.
+
+### Severity Labels for Review Findings
+
+Every review comment should be labeled so the author knows what is required vs optional:
+
+| Label | Meaning | Author Action |
+|-------|---------|---------------|
+| *(no prefix)* | Required change | Must address before merge |
+| **Critical:** | Blocks merge | Security vulnerability, data loss, broken functionality |
+| **Nit:** | Minor, optional | Author may ignore — formatting, style preferences |
+| **Optional:** / **Consider:** | Suggestion | Worth considering but not required |
+| **FYI** | Informational only | No action needed — context for future reference |
+
+Instruct all reviewer agents to label their findings accordingly.
+
+### Multi-Model Review Pattern
+
+Use different agents for different review perspectives to catch blind spots:
+
+```
+style-inspector reviews for conventions
+        │
+        ▼
+security-analyst reviews for vulnerabilities (reads style findings)
+        │
+        ▼
+performance-analyst reviews for bottlenecks (reads security findings)
+        │
+        ▼
+architecture-reviewer reviews for design (reads previous findings)
+        │
+        ▼
+review-synthesizer aggregates and resolves conflicts → final verdict
+```
+
+Different models have different blind spots. The sequential pipeline ensures each specialist can incorporate prior findings, and the synthesizer resolves conflicts with a consistent severity framework.
+
+### Dead Code Hygiene
+
+After any refactoring review, instruct agents to check for orphaned code:
+
+1. Identify code that is now unreachable or unused
+2. List it explicitly in their review output
+3. **Do not silently delete** — note it as: "Should these now-unused elements be removed: [list]?"
+
+Dead code confuses future readers and agents. Explicit identification prevents silent deletion of code the author may have intended to keep.
+
+## Common Rationalizations
+
+| Rationalization | Reality |
+|---|---|
+| "It works, that's good enough" | Working code that's unreadable, insecure, or architecturally wrong creates debt that compounds. |
+| "I wrote it, so I know it's correct" | Authors are blind to their own assumptions. Every change benefits from another set of eyes. |
+| "We'll clean it up later" | Later never comes. The review is the quality gate — use it. |
+| "AI-generated code is probably fine" | AI code needs more scrutiny, not less. It's confident and plausible, even when wrong. |
+| "The tests pass, so it's good" | Tests are necessary but not sufficient. They don't catch architecture problems, security issues, or readability concerns. |
+
+## Red Flags
+
+- PRs merged without any review
+- Review that only checks if tests pass (ignoring other axes)
+- "LGTM" without evidence of actual review (rubber-stamping)
+- Security-sensitive changes without security-focused review
+- Large PRs that are "too big to review properly" — split them instead
+- No regression tests accompanying a bug fix PR
+- Review comments without severity labels — authors can't tell what's required vs optional
+
+## Verification
+
+After the full review pipeline completes:
+
+- [ ] All Critical findings are resolved or explicitly escalated to the user
+- [ ] All Important/Required findings are resolved or deferred with justification
+- [ ] Severity labels applied to all review findings
+- [ ] Synthesizer produced a final verdict: APPROVED / CHANGES REQUESTED / BLOCKED
+- [ ] Dead code identified (if any refactoring was reviewed)
+- [ ] `_workspace/05_review_summary.md` exists and contains the final verdict

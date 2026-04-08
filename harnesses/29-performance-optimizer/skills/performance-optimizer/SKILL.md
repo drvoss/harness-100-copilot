@@ -123,3 +123,85 @@ task(agent_type="general-purpose",
 1. Normal case: "My React+Node.js app is slow, LCP is 4s and API p99 is 800ms" -> full pipeline produces profiling + frontend + backend + infra + review report
 2. Existing profiling: 01_profiling_report.md already present -> skip Phase 2, run optimization agents directly
 3. Error case: Frontend optimizer output missing -> infra-tuner uses profiling data only, performance-reviewer notes partial data
+
+## Performance Standards
+
+### Optimization Workflow (Measure First)
+
+Instruct the profiling-analyst to always follow this 5-step process:
+
+```
+1. MEASURE  → Establish baseline with real data (not assumptions)
+2. IDENTIFY → Find the actual bottleneck (not assumed bottleneck)
+3. FIX      → Address the specific bottleneck identified
+4. VERIFY   → Measure again, confirm the improvement with numbers
+5. GUARD    → Add monitoring or CI performance budgets to prevent regression
+```
+
+**The GUARD step is mandatory.** An optimization without regression protection will be undone by the next feature change. Every optimization must result in either a CI performance budget check or a monitoring alert threshold.
+
+### Core Web Vitals Targets
+
+Instruct the frontend-optimizer to target these thresholds (Google's "Good" tier):
+
+| Metric | Good | Needs Work | Poor |
+|--------|------|------------|------|
+| **LCP** (Largest Contentful Paint) | ≤ 2.5s | ≤ 4.0s | > 4.0s |
+| **INP** (Interaction to Next Paint) | ≤ 200ms | ≤ 500ms | > 500ms |
+| **CLS** (Cumulative Layout Shift) | ≤ 0.1 | ≤ 0.25 | > 0.25 |
+
+Any optimization must demonstrate movement toward the "Good" tier with before/after measurements.
+
+### Performance Budget
+
+Instruct agents to enforce these budgets and flag violations:
+
+```
+JavaScript bundle: < 200KB gzipped (initial load)
+CSS:               < 50KB gzipped
+API response time: < 200ms (P95)
+Time to Interactive: < 3.5s on 4G
+Lighthouse Performance score: ≥ 90
+```
+
+Violations must be included in `_workspace/05_performance_review.md` as actionable findings.
+
+### What Counts as Done
+
+Performance work is only complete when:
+1. Before and after measurements exist (specific numbers, not "it feels faster")
+2. The specific bottleneck is identified and addressed
+3. Core Web Vitals are within "Good" thresholds (or documented deviation with justification)
+4. A regression guard is in place (CI budget check or monitoring alert)
+
+## Common Rationalizations
+
+| Rationalization | Reality |
+|---|---|
+| "We'll optimize later" | Performance debt compounds. Fix obvious anti-patterns now, defer micro-optimizations. |
+| "It's fast on my machine" | Your machine isn't the user's. Profile on representative hardware and networks. |
+| "This optimization is obvious" | If you didn't measure, you don't know. Profile first. |
+| "Users won't notice 100ms" | Research shows 100ms delays impact conversion rates. Users notice more than you think. |
+| "The framework handles performance" | Frameworks prevent some issues but can't fix N+1 queries or oversized bundles. |
+
+## Red Flags
+
+- Optimization without profiling data to justify it
+- N+1 query patterns in data fetching code
+- List endpoints without pagination
+- Images without dimensions, lazy loading, or responsive sizes
+- Bundle size growing without review
+- No performance monitoring in production
+- Claiming "done" without before/after measurement numbers
+
+## Verification
+
+After the full performance optimization pipeline completes:
+
+- [ ] Before and after measurements documented with specific numbers
+- [ ] The specific bottleneck identified (not assumed) and addressed
+- [ ] Core Web Vitals within "Good" thresholds (LCP ≤2.5s, INP ≤200ms, CLS ≤0.1)
+- [ ] JS bundle size under 200KB gzipped (initial load)
+- [ ] API P95 response time under 200ms
+- [ ] CI performance budget or monitoring alert configured (GUARD step complete)
+- [ ] `_workspace/05_performance_review.md` exists with before/after comparison and ROI

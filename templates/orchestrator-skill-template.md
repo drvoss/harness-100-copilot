@@ -86,3 +86,28 @@ task(agent_type="general-purpose",
 Adapted from [revfactory/harness-100](https://github.com/revfactory/harness-100/tree/main/en/{nn}-{name})
 under Apache 2.0 License. Key adaptation: SendMessage peer communication
 replaced with file-based message bus (`_workspace/messages/`).
+
+## Common Rationalizations
+
+| Rationalization | Reality |
+|---|---|
+| "{common excuse for skipping this harness}" | {why the excuse doesn't hold, with consequence} |
+| "{common time-pressure excuse}" | {why deferral is more costly than doing it now} |
+| "{common simplification rationalization}" | {why the simplification is a false economy} |
+
+## Red Flags
+
+- {Warning sign that this skill is being applied incorrectly or skipped}
+- {Indicator that the wrong scale mode was selected}
+- {Sign that outputs are being accepted without verification}
+- {Pattern that indicates the pipeline is being short-circuited}
+
+## Verification
+
+After the pipeline completes:
+
+- [ ] All agent outputs exist in `_workspace/` (no missing files)
+- [ ] Final report (`_workspace/{nn}_{final}.md`) contains a clear verdict
+- [ ] All Critical findings are resolved or explicitly escalated
+- [ ] `_workspace/messages/` contains all handoff messages
+- [ ] {Domain-specific completion criterion}

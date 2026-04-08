@@ -116,3 +116,107 @@ task(agent_type="general-purpose",
 2. **Partial scope:** User asks "dependency audit only" — run only dependency-auditor → security-reporter
 3. **Error case:** One agent fails to produce output — security-reporter produces partial report noting the missing domain with a note to re-run
 4. **Compliance-focused:** User specifies PCI-DSS compliance — config-reviewer and security-reporter emphasize PCI-DSS gap analysis
+
+## Security Standards
+
+### Three-Tier Boundary System
+
+Instruct security agents to classify all findings and recommendations using this framework:
+
+**Always Do (No Exceptions)**
+- Validate all external input at system boundaries (API routes, form handlers)
+- Parameterize all database queries — never concatenate user input into SQL
+- Use HTTPS for all external communication
+- Hash passwords with bcrypt/scrypt/argon2 (never store plaintext)
+- Set security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options)
+- Use `httpOnly`, `secure`, `sameSite` cookies for sessions
+- Run `npm audit` (or equivalent) before every release
+
+**Ask First (Requires Human Approval)**
+- Adding new authentication flows or changing auth logic
+- Storing new categories of sensitive data (PII, payment info)
+- Changing CORS configuration
+- Adding file upload handlers
+- Modifying rate limiting or throttling
+
+**Never Do**
+- Never commit secrets to version control (API keys, passwords, tokens)
+- Never log sensitive data (passwords, tokens, full credit card numbers)
+- Never trust client-side validation as a security boundary
+- Never use `eval()` or `innerHTML` with user-provided data
+- Never store sessions in localStorage for auth tokens
+- Never expose stack traces or internal error details to users
+
+### npm audit Triage Framework
+
+Not all audit findings require immediate action. Instruct the dependency-auditor to apply this decision tree:
+
+```
+Critical or High severity:
+  ├── Is the vulnerable code reachable in production?
+  │   ├── YES → Fix immediately (update, patch, or replace dependency)
+  │   └── NO (dev-only dep, unused code path) → Fix soon, document reason for deferral
+  └── Is a fix available?
+      ├── YES → Update to patched version
+      └── NO → Check workarounds, consider replacing, or add to allowlist with review date
+
+Moderate severity:
+  ├── Reachable in production? → Fix in next release cycle
+  └── Dev-only? → Fix when convenient, track in backlog
+
+Low severity:
+  └── Track and fix during regular dependency updates
+```
+
+### Rate Limiting Standards
+
+Concrete rate limiting thresholds for the config-reviewer and code-security-analyst agents:
+
+| Endpoint Type | Limit | Window |
+|--------------|-------|--------|
+| Authentication endpoints (login, password reset) | 10 requests | 15 minutes |
+| General API endpoints | 100 requests | 15 minutes |
+| Registration / account creation | 5 requests | 1 hour |
+
+### Pre-Commit Secret Detection
+
+Instruct the config-reviewer to check for this common pattern in CI/CD configs:
+
+```bash
+# Check for accidentally staged secrets
+git diff --cached | grep -i "password\|secret\|api_key\|token"
+```
+
+This command should appear in pre-commit hooks or CI pipelines for all projects reviewed.
+
+## Common Rationalizations
+
+| Rationalization | Reality |
+|---|---|
+| "This is an internal tool, security doesn't matter" | Internal tools get compromised. Attackers target the weakest link. |
+| "We'll add security later" | Security retrofitting is 10x harder than building it in. Add it now. |
+| "No one would try to exploit this" | Automated scanners will find it. Security by obscurity is not security. |
+| "The framework handles security" | Frameworks provide tools, not guarantees. You still need to use them correctly. |
+| "It's just a prototype" | Prototypes become production. Security habits from day one. |
+
+## Red Flags
+
+- User input passed directly to database queries, shell commands, or HTML rendering
+- Secrets in source code or commit history
+- API endpoints without authentication or authorization checks
+- Missing CORS configuration or wildcard (`*`) origins
+- No rate limiting on authentication endpoints
+- Stack traces or internal errors exposed to users
+- Dependencies with known critical vulnerabilities in active code paths
+
+## Verification
+
+After the full security audit pipeline completes:
+
+- [ ] `npm audit` (or equivalent) shows no critical or high vulnerabilities in production code paths
+- [ ] No secrets in source code or git history
+- [ ] All user input validated at system boundaries
+- [ ] Authentication and authorization checked on every protected endpoint
+- [ ] Rate limiting active on auth endpoints (≤10 attempts per 15 minutes)
+- [ ] Error responses don't expose internal details
+- [ ] `_workspace/05_security_report.md` exists with CVSS scores and remediation roadmap

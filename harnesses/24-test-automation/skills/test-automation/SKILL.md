@@ -116,3 +116,115 @@ task(agent_type="general-purpose",
 2. **Existing partial coverage:** Some tests already exist → agents build on existing coverage, avoid duplication
 3. **Review only:** All `_workspace/` files present → skip to test-reviewer directly
 4. **Error case:** One agent fails to produce output → remaining agents note the gap; test-reviewer flags it
+
+## Testing Standards
+
+### The Prove-It Pattern (Bug Fixes)
+
+When a bug is reported, instruct the unit-test-writer to apply this mandatory workflow:
+
+```
+Bug report arrives
+       │
+       ▼
+  Write a test that REPRODUCES the bug (it must FAIL first)
+       │
+       ▼
+  Test FAILS → confirms the bug exists and documents expected behavior
+       │
+       ▼
+  Commit the failing test → hands off to the developer or implementation harness
+       │
+       ▼
+  (After fix is implemented) Test PASSES → proves the fix works
+       │
+       ▼
+  Run full test suite → no regressions
+```
+
+"Seems fixed" is not done. The reproduction test is the proof. Note: the unit-test-writer's scope ends at producing the failing reproduction test — implementing the actual fix is outside this harness's scope.
+
+### Test Pyramid Allocation
+
+Instruct the test-strategist to target these ratios (aligned with agent contracts):
+
+```
+          ╱╲
+         ╱  ╲         E2E Tests (~10%)
+        ╱    ╲        Full user flows, real browser
+       ╱──────╲
+      ╱        ╲      Integration Tests (~20%)
+     ╱          ╲     Component interactions, API boundaries
+    ╱────────────╲
+   ╱              ╲   Unit Tests (~70%)
+  ╱                ╲  Pure logic, isolated, fast
+ ╱──────────────────╲
+```
+
+Deviation from these ratios must be justified in `_workspace/01_test_strategy.md`.
+
+### DAMP Over DRY in Tests
+
+In production code, DRY (Don't Repeat Yourself) is usually right. In tests, **DAMP (Descriptive And Meaningful Phrases)** is better. Instruct all test writers to:
+
+- Make each test self-contained and independently readable
+- Prefer duplication in tests over shared helpers that obscure what each test verifies
+- Each test should tell a complete story without the reader needing to trace through shared setup
+
+### Test Double Priority Order
+
+Instruct agents to use test doubles in this preference order:
+
+```
+1. Real implementation  → Highest confidence, catches real bugs
+2. Fake                 → In-memory version of a dependency (e.g., fake database)
+3. Stub                 → Returns canned data, no behavior
+4. Mock (interaction)   → Verifies method calls — use sparingly
+```
+
+Use mocks only when the real implementation is too slow, non-deterministic, or has uncontrollable side effects (external APIs, email sending). Over-mocking creates tests that pass while production breaks.
+
+### State-Based vs Interaction-Based Testing
+
+Instruct agents to test **what code does** (state-based), not **how it does it** (interaction-based):
+
+```typescript
+// GOOD: Tests the outcome (state-based)
+const result = await listTasks({ sortBy: 'createdAt', sortOrder: 'desc' });
+expect(result[0].createdAt).toBeGreaterThan(result[1].createdAt);
+
+// BAD: Tests implementation details (interaction-based)  
+expect(db.query).toHaveBeenCalledWith(expect.stringContaining('ORDER BY'));
+```
+
+Interaction-based tests break on refactoring even when behavior is unchanged.
+
+## Common Rationalizations
+
+| Rationalization | Reality |
+|---|---|
+| "I'll write tests after the code works" | You won't. Tests written after the fact test implementation, not behavior. |
+| "This is too simple to test" | Simple code gets complicated. The test documents the expected behavior. |
+| "Tests slow me down" | Tests slow you down now. They speed you up every time you change the code later. |
+| "I tested it manually" | Manual testing doesn't persist. Tomorrow's change might break it with no way to know. |
+| "It's just a prototype" | Prototypes become production code. Tests from day one prevent "test debt" crisis. |
+
+## Red Flags
+
+- Implementing any logic without a corresponding test
+- Tests that pass on the first run (they may not be testing what you think)
+- Bug fixes without a reproduction test that first failed
+- Tests that verify internal method calls rather than observable behavior
+- Skipping tests to make the suite pass
+- Unit:Integration:E2E ratio far outside 70:20:10 without documented justification
+
+## Verification
+
+After the full test generation pipeline completes:
+
+- [ ] Every new behavior has a corresponding test
+- [ ] All tests pass: run the project's test command
+- [ ] Bug fixes include a reproduction test that failed before the fix
+- [ ] Test pyramid ratios are within target (Unit ~70% / Integration ~20% / E2E ~10%)
+- [ ] No tests were skipped or disabled without documented reason
+- [ ] `_workspace/05_test_review_report.md` exists with APPROVED/NEEDS_REVISION/BLOCKED verdict
