@@ -1,13 +1,13 @@
 ---
 name: performance-optimizer
-description: "Use when optimizing application or system performance -- dispatches profiling-analyst, frontend-optimizer, backend-optimizer, infra-tuner, and performance-reviewer to identify bottlenecks, implement optimizations, and validate improvements with ROI estimation. Covers full-stack performance from Core Web Vitals through API latency, database queries, caching, and infrastructure tuning. Does NOT cover application security review (use security harness), load testing execution, or capacity planning for new systems. Also triggers on: speed up my app, fix slow page load, reduce API latency, optimize Core Web Vitals, tune Kubernetes scaling, reduce infrastructure costs."
+description: "Use when optimizing application or system performance — dispatches profiling-analyst, frontend-optimizer, backend-optimizer, infra-tuner, and performance-reviewer to identify bottlenecks, implement optimizations, and validate improvements with ROI estimation. Covers full-stack performance from Core Web Vitals through API latency, database queries, caching, and infrastructure tuning. Does NOT cover application security review (use security harness), load testing execution, or capacity planning for new systems. Also triggers on: speed up my app, fix slow page load, reduce API latency, optimize Core Web Vitals, tune Kubernetes scaling, reduce infrastructure costs."
 metadata:
   category: harness
   harness: 29-performance-optimizer
   agent_type: general-purpose
 ---
 
-# Performance Optimizer -- Full-Stack Performance Pipeline
+# Performance Optimizer — Full-Stack Performance Pipeline
 
 A 5-agent team profiles system bottlenecks, optimizes frontend and backend performance, tunes infrastructure, and produces a validated improvement report with ROI estimation.
 
@@ -58,7 +58,7 @@ task(agent_type="general-purpose",
 
 ## Phase 2: Profiling & Analysis
 
-### Step 2.1 -- Profiling Analyst
+### Step 2.1 — Profiling Analyst
 
 ```
 task(agent_type="general-purpose",
@@ -67,14 +67,14 @@ task(agent_type="general-purpose",
 
 ## Phase 3: Parallel Optimization (run sequentially)
 
-### Step 3.1 -- Frontend Optimizer (reads from 2.1)
+### Step 3.1 — Frontend Optimizer (reads from 2.1)
 
 ```
 task(agent_type="general-purpose",
      description="You are the frontend-optimizer agent in the performance-optimizer harness. Read agents/frontend-optimizer.md for your full instructions. Read _workspace/00_input.md, _workspace/01_profiling_report.md, and _workspace/messages/profiling-analyst-to-frontend-optimizer.md. Optimize frontend performance: analyze and fix Core Web Vitals (LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1), produce bundle analysis with code splitting plan, design image optimization strategy (WebP/AVIF, lazy loading, srcset), configure CDN caching headers, and define critical CSS strategy. Quantify expected improvement per change. Write to _workspace/02_frontend_optimizations.md. Write handoff to _workspace/messages/frontend-optimizer-to-infra-tuner.md with STATUS: COMPLETE, FINDINGS, CDN_REQUIREMENTS, INFRA_CHANGES. Also consult references/performance-checklist.md for the full frontend performance checklist.")
 ```
 
-### Step 3.2 -- Backend Optimizer (reads from 2.1)
+### Step 3.2 — Backend Optimizer (reads from 2.1)
 
 ```
 task(agent_type="general-purpose",
@@ -83,7 +83,7 @@ task(agent_type="general-purpose",
 
 ## Phase 4: Infrastructure Tuning
 
-### Step 4.1 -- Infra Tuner (reads from 3.1 and 3.2)
+### Step 4.1 — Infra Tuner (reads from 3.1 and 3.2)
 
 ```
 task(agent_type="general-purpose",
@@ -92,7 +92,7 @@ task(agent_type="general-purpose",
 
 ## Phase 5: Review & Validation
 
-### Step 5.1 -- Performance Reviewer (Terminal)
+### Step 5.1 — Performance Reviewer (Terminal)
 
 ```
 task(agent_type="general-purpose",

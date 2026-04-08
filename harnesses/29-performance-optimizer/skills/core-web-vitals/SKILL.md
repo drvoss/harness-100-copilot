@@ -1,13 +1,13 @@
 ---
 name: core-web-vitals
-description: "Use when measuring or optimizing Core Web Vitals -- provides LCP/FID/CLS/INP targets, measurement tool configurations, and optimization techniques for each vital metric. Also triggers on: re-run, update, revise, supplement."
+description: "Use when measuring or optimizing Core Web Vitals — provides LCP/INP/CLS targets, measurement tool configurations, and optimization techniques for each vital metric. Also triggers on: re-run, update, revise, supplement."
 metadata:
   category: skill
   harness: 29-performance-optimizer
   agent_type: general-purpose
 ---
 
-# Core Web Vitals -- LCP/FID/CLS Optimization Reference
+# Core Web Vitals — LCP/INP/CLS Optimization Reference
 
 Reference skill for Core Web Vitals optimization used by the frontend-optimizer agent.
 
@@ -16,11 +16,12 @@ Reference skill for Core Web Vitals optimization used by the frontend-optimizer 
 | Metric | Good | Needs Improvement | Poor |
 |--------|------|------------------|------|
 | LCP (Largest Contentful Paint) | < 2.5s | 2.5s - 4.0s | > 4.0s |
-| FID (First Input Delay) | < 100ms | 100ms - 300ms | > 300ms |
 | INP (Interaction to Next Paint) | < 200ms | 200ms - 500ms | > 500ms |
 | CLS (Cumulative Layout Shift) | < 0.1 | 0.1 - 0.25 | > 0.25 |
 | TTFB (Time to First Byte) | < 800ms | 800ms - 1800ms | > 1800ms |
 | FCP (First Contentful Paint) | < 1.8s | 1.8s - 3.0s | > 3.0s |
+
+> **Note:** FID (First Input Delay) was removed from Core Web Vitals in March 2024 and replaced by INP.
 
 ## LCP Optimization Techniques
 

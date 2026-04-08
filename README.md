@@ -55,7 +55,7 @@ git clone https://github.com/drvoss/harness-100-copilot.git
 # 2. Copy a harness to your project (example: code-reviewer)
 cp -r harness-100-copilot/harnesses/21-code-reviewer/agents/ .github/agents/
 cp -r harness-100-copilot/harnesses/21-code-reviewer/skills/ .github/skills/
-cp -r harness-100-copilot/references/ references/
+cp -r harness-100-copilot/references/ references/   # required by security, testing, and performance harnesses
 
 # 3. Start Copilot CLI in your project
 cd your-project

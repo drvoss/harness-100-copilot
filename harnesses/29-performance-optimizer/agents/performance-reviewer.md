@@ -61,7 +61,7 @@ Output format:
 | Metric | Before | After (Projected) | Change | Target Met? |
 |--------|--------|------------------|--------|-------------|
 | LCP | | | | |
-| FID/INP | | | | |
+| INP     | | | | |
 | CLS | | | | |
 | API P50 | | | | |
 | API P99 | | | | |
