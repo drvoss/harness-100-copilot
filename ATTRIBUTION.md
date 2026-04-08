@@ -63,3 +63,22 @@ explanation.
 
 Each `HARNESS.md` file contains an Attribution section pointing to the specific
 source harness in the original repository.
+
+---
+
+## Additional References
+
+The following content in this repository is adapted from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills),
+licensed under MIT License.
+
+| This Project | Source | Key Changes |
+|-------------|--------|-------------|
+| `references/security-checklist.md` | `references/security-checklist.md` | Reframed as harness reference; linked to 28-security-audit |
+| `references/performance-checklist.md` | `references/performance-checklist.md` | Reframed as harness reference; linked to 29-performance-optimizer |
+| `references/testing-patterns.md` | `references/testing-patterns.md` | Reframed as harness reference; linked to 24-test-automation |
+| `references/accessibility-checklist.md` | `references/accessibility-checklist.md` | Reframed as harness reference |
+| `harnesses/21-code-reviewer/skills/code-reviewer/SKILL.md` | `skills/code-review-and-quality/SKILL.md` | Added Review Standards section (change sizing, severity labels, multi-model pattern, dead code hygiene) |
+| `harnesses/24-test-automation/skills/test-automation/SKILL.md` | `skills/test-driven-development/SKILL.md` | Added Testing Standards section (Prove-It Pattern, DAMP over DRY, test double priority) |
+| `harnesses/28-security-audit/skills/security-audit/SKILL.md` | `skills/security-and-hardening/SKILL.md` | Added Security Standards section (3-tier boundary, npm audit triage, rate limiting) |
+| `harnesses/29-performance-optimizer/skills/performance-optimizer/SKILL.md` | `skills/performance-optimization/SKILL.md` | Added Performance Standards section (measure-first workflow, Core Web Vitals, performance budget) |
+| `skills/harness-generator/references/skill-writing-guide.md` | `docs/skill-anatomy.md` | Added Skill Anatomy Principles section |

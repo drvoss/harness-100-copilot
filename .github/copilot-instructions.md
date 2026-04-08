@@ -10,7 +10,8 @@ This is a Copilot CLI harness library — a collection of multi-agent workflows 
 
 - Write failing tests before implementing (TDD — Red → Green → Refactor)
 - For bug fixes: always write a reproduction test first (Prove-It Pattern)
-- Target ratios: Unit 80% / Integration 15% / E2E 5%
+- General TDD target ratios: Unit 80% / Integration 15% / E2E 5%
+  - (test-automation harness uses 70/20/10 to reflect its Testcontainers + Playwright scope)
 - DAMP over DRY in tests — each test should be self-contained and readable
 - Prefer real implementations over mocks; use mocks only at boundaries
 

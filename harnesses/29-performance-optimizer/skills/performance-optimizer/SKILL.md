@@ -13,7 +13,7 @@ A 5-agent team profiles system bottlenecks, optimizes frontend and backend perfo
 
 ## Execution Mode
 
-File-Bus Team -- Agents communicate via `_workspace/messages/`, orchestrator sequences execution.
+**File-Bus Team** — Agents communicate via `_workspace/messages/`, orchestrator sequences execution.
 
 ## Agent Composition
 
@@ -29,25 +29,25 @@ File-Bus Team -- Agents communicate via `_workspace/messages/`, orchestrator seq
 
 ```
 _workspace/
-- 00_input.md                     (system under review, performance targets, current metrics if known)
-- 01_profiling_report.md          (profiling-analyst output: bottleneck map, baseline metrics)
-- 02_frontend_optimizations.md    (frontend-optimizer output)
-- 03_backend_optimizations.md     (backend-optimizer output)
-- 04_infra_tuning.md              (infra-tuner output)
-- 05_performance_review.md        (performance-reviewer output -- TERMINAL)
-- messages/
-  - profiling-analyst-to-frontend-optimizer.md
-  - profiling-analyst-to-backend-optimizer.md
-  - frontend-optimizer-to-infra-tuner.md
-  - backend-optimizer-to-infra-tuner.md
-  - infra-tuner-to-performance-reviewer.md
+├── 00_input.md                     (system under review, performance targets, current metrics if known)
+├── 01_profiling_report.md          (profiling-analyst output: bottleneck map, baseline metrics)
+├── 02_frontend_optimizations.md    (frontend-optimizer output)
+├── 03_backend_optimizations.md     (backend-optimizer output)
+├── 04_infra_tuning.md              (infra-tuner output)
+├── 05_performance_review.md        (performance-reviewer output — TERMINAL)
+└── messages/
+    ├── profiling-analyst-to-frontend-optimizer.md
+    ├── profiling-analyst-to-backend-optimizer.md
+    ├── frontend-optimizer-to-infra-tuner.md
+    ├── backend-optimizer-to-infra-tuner.md
+    └── infra-tuner-to-performance-reviewer.md
 ```
 
 ## Pre-Flight Checks
-- No duplicate agent instances running
-- _workspace/ is clean or confirmed stale (safe to overwrite)
-- All agent files present in agents/
-- System access or metrics data available for profiling
+- [ ] No duplicate agent instances running
+- [ ] `_workspace/` is clean or confirmed stale (safe to overwrite)
+- [ ] All agent files present in `agents/`
+- [ ] System access or metrics data available for profiling
 
 ## Phase 1: Setup (Orchestrator)
 
@@ -71,7 +71,7 @@ task(agent_type="general-purpose",
 
 ```
 task(agent_type="general-purpose",
-     description="You are the frontend-optimizer agent in the performance-optimizer harness. Read agents/frontend-optimizer.md for your full instructions. Read _workspace/00_input.md, _workspace/01_profiling_report.md, and _workspace/messages/profiling-analyst-to-frontend-optimizer.md. Optimize frontend performance: analyze and fix Core Web Vitals (LCP < 2.5s, FID < 100ms, CLS < 0.1), produce bundle analysis with code splitting plan, design image optimization strategy (WebP/AVIF, lazy loading, srcset), configure CDN caching headers, and define critical CSS strategy. Quantify expected improvement per change. Write to _workspace/02_frontend_optimizations.md. Write handoff to _workspace/messages/frontend-optimizer-to-infra-tuner.md with STATUS: COMPLETE, FINDINGS, CDN_REQUIREMENTS, INFRA_CHANGES.")
+     description="You are the frontend-optimizer agent in the performance-optimizer harness. Read agents/frontend-optimizer.md for your full instructions. Read _workspace/00_input.md, _workspace/01_profiling_report.md, and _workspace/messages/profiling-analyst-to-frontend-optimizer.md. Optimize frontend performance: analyze and fix Core Web Vitals (LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1), produce bundle analysis with code splitting plan, design image optimization strategy (WebP/AVIF, lazy loading, srcset), configure CDN caching headers, and define critical CSS strategy. Quantify expected improvement per change. Write to _workspace/02_frontend_optimizations.md. Write handoff to _workspace/messages/frontend-optimizer-to-infra-tuner.md with STATUS: COMPLETE, FINDINGS, CDN_REQUIREMENTS, INFRA_CHANGES. Also consult references/performance-checklist.md for the full frontend performance checklist.")
 ```
 
 ### Step 3.2 -- Backend Optimizer (reads from 2.1)
@@ -120,9 +120,9 @@ task(agent_type="general-purpose",
 | Target not found | Ask user to clarify before proceeding |
 
 ## Test Scenarios
-1. Normal case: "My React+Node.js app is slow, LCP is 4s and API p99 is 800ms" -> full pipeline produces profiling + frontend + backend + infra + review report
-2. Existing profiling: 01_profiling_report.md already present -> skip Phase 2, run optimization agents directly
-3. Error case: Frontend optimizer output missing -> infra-tuner uses profiling data only, performance-reviewer notes partial data
+1. **Normal case:** "My React+Node.js app is slow, LCP is 4s and API p99 is 800ms" → full pipeline produces profiling + frontend + backend + infra + review report
+2. **Existing profiling:** `01_profiling_report.md` already present → skip Phase 2, run optimization agents directly
+3. **Error case:** Frontend optimizer output missing → infra-tuner uses profiling data only, performance-reviewer notes partial data
 
 ## Performance Standards
 

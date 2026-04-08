@@ -55,6 +55,9 @@ cp -r harnesses/$HARNESS/agents/ "$YOUR_PROJECT/.github/agents/"
 
 # Copy skills
 cp -r harnesses/$HARNESS/skills/ "$YOUR_PROJECT/.github/skills/"
+
+# Copy shared reference files (required by security, testing, and performance harnesses)
+cp -r references/ "$YOUR_PROJECT/references/"
 ```
 
 Your project structure will look like:
@@ -71,6 +74,11 @@ your-project/
 │       ├── code-reviewer/SKILL.md
 │       ├── vulnerability-patterns/SKILL.md
 │       └── refactoring-catalog/SKILL.md
+├── references/              ← checklist files consulted by agents at runtime
+│   ├── security-checklist.md
+│   ├── testing-patterns.md
+│   ├── performance-checklist.md
+│   └── accessibility-checklist.md
 └── ... (your project files)
 ```
 
