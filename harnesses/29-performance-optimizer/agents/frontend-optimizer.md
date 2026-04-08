@@ -54,7 +54,7 @@ Output format:
 ### LCP Optimization
 [Specific changes with expected impact]
 
-### FID/INP Optimization
+### INP Optimization
 [Main thread blocking reduction — targets INP ≤ 200ms (FID deprecated March 2024)]
 
 ### CLS Fixes

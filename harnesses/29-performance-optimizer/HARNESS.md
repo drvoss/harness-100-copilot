@@ -14,7 +14,7 @@ harnesses/29-performance-optimizer/
   - performance-reviewer.md - Improvement validation: before/after comparison, ROI estimation (TERMINAL)
 - skills/
   - performance-optimizer/SKILL.md - Orchestrator - team coordination, workflow, error handling
-  - core-web-vitals/SKILL.md - Supporting - LCP/FID/CLS targets, measurement tools, optimization
+  - core-web-vitals/SKILL.md - Supporting - LCP/INP/CLS targets, measurement tools, optimization
   - db-query-optimization/SKILL.md - Supporting - EXPLAIN plan patterns, index tuning, N+1 detection
 
 ## Agent Team
