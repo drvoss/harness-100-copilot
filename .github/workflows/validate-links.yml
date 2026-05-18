@@ -17,12 +17,14 @@ jobs:
           args: |
             --verbose
             --no-progress
-            --exclude-mail
+            --exclude '^mailto:'
             --exclude 'localhost'
             --exclude 'example\.com'
             --exclude 'your-org'
             README.md
             README.ko.md
+            README.ja.md
+            README.zh.md
             guides/*.md
             PORTING-NOTES.md
             ATTRIBUTION.md
